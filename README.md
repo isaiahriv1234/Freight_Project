@@ -1,7 +1,7 @@
 # Freight_Project
 Freight project for CPSLO/AWS DxHub CCAI Summer Camp
 
-# Project_Roles
+# Project Roles
 UI Developer(s): Alicia
 SWE: River, Ethan, Isaiah
 ML: River, Ethan, Isaiah
