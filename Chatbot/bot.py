@@ -10,6 +10,7 @@ import json
 import os
 from datetime import datetime
 from typing import Dict, List, Any
+from shipping_optimizer import ShippingOptimizer
 
 class FreightChatbot:
     def __init__(self):
@@ -21,6 +22,7 @@ class FreightChatbot:
         self.model_id = "anthropic.claude-3-sonnet-20240229-v1:0"
         self.data_path = "../Data/SLO CFS Spend Data 2024/Original-Table 1.csv"
         self.df = None
+        self.shipping_optimizer = ShippingOptimizer("../Data/SLO CFS Spend Data 2024/Cleaned_Procurement_Data.csv")
         self.load_data()
         
     def load_data(self):
@@ -106,8 +108,32 @@ class FreightChatbot:
                 avg_order = self.df['Total_Amount'].mean()
                 return f"Average order value: ${avg_order:,.2f}"
             
+            elif 'shipping' in query_lower or 'carrier' in query_lower:
+                if 'recommend' in query_lower or 'best' in query_lower:
+                    # Extract order value if mentioned
+                    import re
+                    value_match = re.search(r'\$?([0-9,]+)', query)
+                    order_value = float(value_match.group(1).replace(',', '')) if value_match else 1000
+                    
+                    recommendations = self.shipping_optimizer.get_carrier_recommendations(order_value)
+                    result = f"Shipping recommendations for ${order_value:,.2f} order:\n"
+                    for i, rec in enumerate(recommendations[:3], 1):
+                        result += f"{i}. {rec['carrier']}: ${rec['predicted_cost']:.2f} ({rec['avg_lead_time']:.1f} days)\n"
+                    return result
+                
+                elif 'savings' in query_lower or 'cost' in query_lower:
+                    savings = self.shipping_optimizer.get_cost_savings_analysis()
+                    return f"Shipping Cost Analysis:\n• Current Total: ${savings['current_total_shipping']:,.2f}\n• Potential Savings: ${savings['potential_savings']:,.2f} ({savings['savings_percentage']:.1f}%)"
+                
+                elif 'performance' in query_lower:
+                    performance = self.shipping_optimizer.get_carrier_performance_summary()
+                    result = "Carrier Performance Summary:\n"
+                    for carrier, stats in performance.items():
+                        result += f"• {carrier}: ${stats['avg_cost']:.2f} avg, {stats['avg_lead_time']:.1f} days, {stats['total_shipments']} shipments\n"
+                    return result
+            
             else:
-                return "I can help you with queries about total spend, top suppliers, monthly trends, supplier types, and average order values. Please try rephrasing your question."
+                return "I can help you with queries about total spend, top suppliers, monthly trends, supplier types, average order values, and shipping optimization. Please try rephrasing your question."
                 
         except Exception as e:
             return f"Error processing query: {e}"
@@ -181,6 +207,9 @@ class FreightChatbot:
                 • What's the average order value?
                 • Break down spending by supplier type
                 • How much did we spend with [specific supplier]?
+                • Recommend shipping carriers for a $5000 order
+                • Show carrier performance summary
+                • What are potential shipping cost savings?
                 """)
                 continue
             
