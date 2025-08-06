@@ -16,6 +16,7 @@ from supplier_diversity_tracker import SupplierDiversityTracker
 from automated_shipping_optimizer import AutomatedShippingOptimizer
 from executive_dashboard import ExecutiveDashboard
 from shipment_analyzer import ShipmentAnalyzer
+from easypost_integration import EasyPostIntegration
 from delivery_time_tracker import DeliveryTimeTracker
 from centralized_purchasing_system import CentralizedPurchasingSystem
 
@@ -28,6 +29,7 @@ executive_dashboard = ExecutiveDashboard()
 shipment_analyzer = ShipmentAnalyzer()
 delivery_tracker = DeliveryTimeTracker()
 purchasing_system = CentralizedPurchasingSystem()
+easypost_api = EasyPostIntegration()
 
 def load_data():
     """Load the cleaned procurement data"""
@@ -292,6 +294,28 @@ def api_approve_request():
         approval_data['decision'],
         approval_data.get('notes', '')
     )
+    return jsonify(result)
+
+@app.route('/api/easypost-rates', methods=['POST'])
+def api_easypost_rates():
+    """API endpoint for EasyPost shipping rates"""
+    shipment_data = request.get_json()
+    rates = easypost_api.get_shipping_rates(shipment_data)
+    return jsonify(rates)
+
+@app.route('/api/create-label', methods=['POST'])
+def api_create_label():
+    """API endpoint for creating shipping labels"""
+    data = request.get_json()
+    result = easypost_api.create_shipping_label(data['rate_id'])
+    return jsonify(result)
+
+@app.route('/api/track-shipment')
+def api_track_shipment():
+    """API endpoint for tracking shipments"""
+    tracking_number = request.args.get('tracking_number')
+    carrier = request.args.get('carrier')
+    result = easypost_api.track_shipment(tracking_number, carrier)
     return jsonify(result)
 
 if __name__ == '__main__':
