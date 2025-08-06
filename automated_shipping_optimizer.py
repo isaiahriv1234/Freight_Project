@@ -10,9 +10,7 @@ from datetime import datetime, timedelta
 from typing import Dict, List, Tuple, Optional
 from shipping_optimizer import ShippingOptimizer
 from consolidation_optimizer import ConsolidationOptimizer
-from ups_integration import get_ups_rates_for_order
-from fedex_integration import get_fedex_rates_for_order
-from dhl_integration import get_dhl_rates_for_order
+# from shippo_integration import ShippoIntegration  # Removed - teammate handling API integration
 
 class AutomatedShippingOptimizer:
     def __init__(self, data_path: str = 'Data/SLO CFS Spend Data 2024/Cleaned_Procurement_Data.csv'):
@@ -21,6 +19,7 @@ class AutomatedShippingOptimizer:
         self.df['PO_Date'] = pd.to_datetime(self.df['PO_Date'])
         self.shipping_optimizer = ShippingOptimizer(data_path)
         self.consolidation_optimizer = ConsolidationOptimizer(data_path)
+        # self.shippo_api = ShippoIntegration()  # Removed - teammate handling API integration
         
         # Automation rules
         self.cost_threshold = 50.0  # Minimum savings to trigger automation
@@ -58,31 +57,14 @@ class AutomatedShippingOptimizer:
     
     def _get_real_time_rates(self, order_value: float, weight: float, 
                            dest_city: str, dest_state: str, dest_zip: str) -> List[Dict]:
-        """Get real-time rates from all configured APIs"""
-        all_rates = []
-        
-        # Try UPS
-        try:
-            ups_rates = get_ups_rates_for_order(order_value, weight, dest_city, dest_state, dest_zip)
-            all_rates.extend(ups_rates)
-        except:
-            pass
-        
-        # Try FedEx
-        try:
-            fedex_rates = get_fedex_rates_for_order(order_value, weight, dest_city, dest_state, dest_zip)
-            all_rates.extend(fedex_rates)
-        except:
-            pass
-        
-        # Try DHL
-        try:
-            dhl_rates = get_dhl_rates_for_order(order_value, weight, dest_city, dest_state, dest_zip)
-            all_rates.extend(dhl_rates)
-        except:
-            pass
-        
-        return sorted(all_rates, key=lambda x: x['cost'])
+        """Get mock real-time rates (teammate handling actual API integration)"""
+        # Mock rates for demo - teammate will implement actual API integration
+        return [
+            {'carrier': 'UPS', 'service': 'Ground', 'cost': 12.50, 'transit_days': 3},
+            {'carrier': 'FedEx', 'service': 'Ground', 'cost': 13.25, 'transit_days': 3},
+            {'carrier': 'UPS', 'service': '2nd Day Air', 'cost': 25.75, 'transit_days': 2},
+            {'carrier': 'DHL', 'service': 'Express', 'cost': 35.00, 'transit_days': 1}
+        ]
     
     def _analyze_shipping_options(self, historical: List[Dict], real_time: List[Dict], 
                                 order_details: Dict) -> Dict:

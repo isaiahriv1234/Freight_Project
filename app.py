@@ -17,6 +17,7 @@ from automated_shipping_optimizer import AutomatedShippingOptimizer
 from executive_dashboard import ExecutiveDashboard
 from shipment_analyzer import ShipmentAnalyzer
 from delivery_time_tracker import DeliveryTimeTracker
+from centralized_purchasing_system import CentralizedPurchasingSystem
 
 app = Flask(__name__)
 shipping_optimizer = ShippingOptimizer()
@@ -26,6 +27,7 @@ automated_optimizer = AutomatedShippingOptimizer()
 executive_dashboard = ExecutiveDashboard()
 shipment_analyzer = ShipmentAnalyzer()
 delivery_tracker = DeliveryTimeTracker()
+purchasing_system = CentralizedPurchasingSystem()
 
 def load_data():
     """Load the cleaned procurement data"""
@@ -95,6 +97,12 @@ def challenge_dashboard_page():
 def delivery_dashboard_page():
     """Delivery tracking dashboard page"""
     return render_template('delivery_dashboard.html')
+
+@app.route('/centralized-purchasing')
+def centralized_purchasing():
+    """Centralized purchasing dashboard page"""
+    dashboard_data = purchasing_system.get_centralized_dashboard_data()
+    return render_template('centralized_dashboard.html', dashboard=dashboard_data)
 
 @app.route('/api/spend-summary')
 def api_spend_summary():
@@ -266,6 +274,25 @@ def api_predict_delivery():
 def api_delivery_alerts():
     """API endpoint for delivery alerts"""
     return jsonify(delivery_tracker.generate_delivery_alerts())
+
+@app.route('/api/submit-purchase-request', methods=['POST'])
+def api_submit_purchase_request():
+    """API endpoint for submitting purchase requests"""
+    request_data = request.get_json()
+    result = purchasing_system.submit_purchase_request(request_data)
+    return jsonify(result)
+
+@app.route('/api/approve-request', methods=['POST'])
+def api_approve_request():
+    """API endpoint for approving purchase requests"""
+    approval_data = request.get_json()
+    result = purchasing_system.process_approval(
+        approval_data['request_id'],
+        approval_data['approver'],
+        approval_data['decision'],
+        approval_data.get('notes', '')
+    )
+    return jsonify(result)
 
 if __name__ == '__main__':
     print("🚀 Starting Freight Optimization Dashboard...")
