@@ -15,6 +15,8 @@ from consolidation_optimizer import ConsolidationOptimizer
 from supplier_diversity_tracker import SupplierDiversityTracker
 from automated_shipping_optimizer import AutomatedShippingOptimizer
 from executive_dashboard import ExecutiveDashboard
+from shipment_analyzer import ShipmentAnalyzer
+from delivery_time_tracker import DeliveryTimeTracker
 
 app = Flask(__name__)
 shipping_optimizer = ShippingOptimizer()
@@ -22,6 +24,8 @@ consolidation_optimizer = ConsolidationOptimizer()
 diversity_tracker = SupplierDiversityTracker()
 automated_optimizer = AutomatedShippingOptimizer()
 executive_dashboard = ExecutiveDashboard()
+shipment_analyzer = ShipmentAnalyzer()
+delivery_tracker = DeliveryTimeTracker()
 
 def load_data():
     """Load the cleaned procurement data"""
@@ -81,6 +85,16 @@ def automation_dashboard():
 def executive_dashboard_page():
     """Executive dashboard page"""
     return render_template('executive_dashboard.html')
+
+@app.route('/challenge')
+def challenge_dashboard_page():
+    """Challenge readiness dashboard page"""
+    return render_template('challenge_dashboard.html')
+
+@app.route('/delivery')
+def delivery_dashboard_page():
+    """Delivery tracking dashboard page"""
+    return render_template('delivery_dashboard.html')
 
 @app.route('/api/spend-summary')
 def api_spend_summary():
@@ -214,6 +228,44 @@ def api_consolidation_visibility():
 def api_diversity_visibility():
     """API endpoint for enhanced diversity visibility"""
     return jsonify(executive_dashboard.get_diversity_visibility())
+
+@app.route('/api/challenge-readiness')
+def api_challenge_readiness():
+    """API endpoint for challenge readiness analysis"""
+    return jsonify(shipment_analyzer.generate_challenge_readiness_report())
+
+@app.route('/api/cost-comparison')
+def api_cost_comparison():
+    """API endpoint for cost calculator comparison"""
+    return jsonify(shipment_analyzer.cost_calculator_comparison())
+
+@app.route('/api/data-completeness')
+def api_data_completeness():
+    """API endpoint for data completeness analysis"""
+    return jsonify(shipment_analyzer.analyze_current_data_completeness())
+
+@app.route('/api/delivery-dashboard')
+def api_delivery_dashboard():
+    """API endpoint for delivery tracking dashboard data"""
+    return jsonify(delivery_tracker.get_delivery_dashboard_data())
+
+@app.route('/api/delivery-performance')
+def api_delivery_performance():
+    """API endpoint for delivery performance summary"""
+    return jsonify(delivery_tracker.get_delivery_performance_summary())
+
+@app.route('/api/predict-delivery')
+def api_predict_delivery():
+    """API endpoint for delivery time prediction"""
+    carrier = request.args.get('carrier', 'UPS')
+    order_value = float(request.args.get('order_value', 1000))
+    supplier = request.args.get('supplier')
+    return jsonify(delivery_tracker.predict_delivery_times(carrier, order_value, supplier))
+
+@app.route('/api/delivery-alerts')
+def api_delivery_alerts():
+    """API endpoint for delivery alerts"""
+    return jsonify(delivery_tracker.generate_delivery_alerts())
 
 if __name__ == '__main__':
     print("🚀 Starting Freight Optimization Dashboard...")

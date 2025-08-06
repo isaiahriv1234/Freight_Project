@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Readiness Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <style>
+        .challenge-header {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .readiness-score {
+            font-size: 4em;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .status-not-ready { color: #e74c3c; }
+        .status-ready { color: #27ae60; }
+        .data-gap {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .quick-win {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .priority-high { border-left: 4px solid #e74c3c; }
+        .priority-medium { border-left: 4px solid #f39c12; }
+        .priority-low { border-left: 4px solid #27ae60; }
+        .progress-bar {
+            background: #ecf0f1;
+            border-radius: 10px;
+            height: 20px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        .progress-fill {
+            background: linear-gradient(90deg, #e74c3c 0%, #f39c12 50%, #27ae60 100%);
+            height: 100%;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="challenge-header">
+        <h1>📦 Challenge Readiness Analysis</h1>
+        <p>Cost Calculator & Provider Comparison Readiness</p>
+        <div class="readiness-score" id="readinessScore">-/100</div>
+        <div id="challengeStatus">Loading...</div>
+    </div>
+
+    <div class="container">
+        <!-- Readiness Overview -->
+        <div class="card">
+            <h3>📊 Data Completeness Overview</h3>
+            <div id="completenessOverview">Loading...</div>
+        </div>
+
+        <div class="dashboard-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+            <!-- Blocking Issues -->
+            <div class="card">
+                <h3>❌ Blocking Issues</h3>
+                <div id="blockingIssues">Loading...</div>
+            </div>
+
+            <!-- Quick Wins -->
+            <div class="card">
+                <h3>✅ Quick Wins Available</h3>
+                <div id="quickWins">Loading...</div>
+            </div>
+        </div>
+
+        <!-- Data Collection Plan -->
+        <div class="card">
+            <h3>📋 Data Collection Plan</h3>
+            <div id="dataCollectionPlan">Loading...</div>
+        </div>
+
+        <!-- Cost Analysis Preview -->
+        <div class="card">
+            <h3>💰 Cost Analysis Preview</h3>
+            <div id="costAnalysisPreview">Loading...</div>
+        </div>
+
+        <!-- Missing Data Fields -->
+        <div class="card">
+            <h3>📝 Missing Data Fields</h3>
+            <div class="dashboard-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div>
+                    <h4>Shipment Details</h4>
+                    <div class="data-gap">
+                        <strong>Weight & Dimensions:</strong><br>
+                        • Weight_Lbs<br>
+                        • Length_Inches<br>
+                        • Width_Inches<br>
+                        • Height_Inches
+                    </div>
+                </div>
+                <div>
+                    <h4>Routing Information</h4>
+                    <div class="data-gap">
+                        <strong>Addresses & Distance:</strong><br>
+                        • Origin_Address<br>
+                        • Destination_Address<br>
+                        • Distance_Miles
+                    </div>
+                </div>
+                <div>
+                    <h4>Item Specifications</h4>
+                    <div class="data-gap">
+                        <strong>Product Details:</strong><br>
+                        • Item_Description<br>
+                        • Fragile_Flag<br>
+                        • Hazmat_Flag
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Implementation Timeline -->
+        <div class="card">
+            <h3>⏱️ Implementation Timeline</h3>
+            <div id="implementationTimeline">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 35%"></div>
+                </div>
+                <p><strong>Current Progress:</strong> 35% - Basic analytics complete</p>
+                <p><strong>Full Implementation:</strong> 6-8 weeks with proper data collection</p>
+                
+                <h4>Phase Breakdown:</h4>
+                <div style="margin: 20px 0;">
+                    <div class="quick-win priority-high">
+                        <strong>Phase 1 (Weeks 1-2):</strong> Data Collection Setup<br>
+                        <small>Integrate warehouse systems, extract shipping data</small>
+                    </div>
+                    <div class="quick-win priority-medium">
+                        <strong>Phase 2 (Weeks 3-4):</strong> Cost Calculator Development<br>
+                        <small>Build comparison engine, integrate carrier APIs</small>
+                    </div>
+                    <div class="quick-win priority-low">
+                        <strong>Phase 3 (Weeks 5-8):</strong> Testing & Optimization<br>
+                        <small>Validate calculations, optimize recommendations</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load challenge readiness data
+        async function loadChallengeReadiness() {
+            try {
+                const response = await fetch('/api/challenge-readiness');
+                const data = await response.json();
+                
+                // Update readiness score
+                document.getElementById('readinessScore').textContent = data.readiness_score + '/100';
+                document.getElementById('challengeStatus').textContent = data.challenge_status;
+                
+                // Update completeness overview
+                updateCompletenessOverview(data.data_completeness);
+                
+                // Update blocking issues
+                updateBlockingIssues(data.blocking_issues);
+                
+                // Update quick wins
+                updateQuickWins(data.quick_wins);
+                
+                // Update data collection plan
+                updateDataCollectionPlan(data.data_completeness.next_steps);
+                
+                // Update cost analysis preview
+                updateCostAnalysisPreview(data.cost_analysis_preview);
+                
+            } catch (error) {
+                console.error('Error loading challenge readiness:', error);
+            }
+        }
+
+        function updateCompletenessOverview(completeness) {
+            const html = `
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: ${completeness.data_completeness_score}%"></div>
+                </div>
+                <p><strong>Data Completeness:</strong> ${completeness.data_completeness_score}%</p>
+                <p><strong>Challenge Ready:</strong> ${completeness.challenge_ready ? 'Yes' : 'No'}</p>
+                
+                <h4>Available Data:</h4>
+                ${Object.entries(completeness.available_data).map(([category, fields]) => `
+                    <div class="quick-win">
+                        <strong>${category.replace('_', ' ').toUpperCase()}:</strong> ${fields.join(', ')}
+                    </div>
+                `).join('')}
+            `;
+            document.getElementById('completenessOverview').innerHTML = html;
+        }
+
+        function updateBlockingIssues(issues) {
+            const html = issues.map(issue => `
+                <div class="data-gap">
+                    <i class="fas fa-exclamation-triangle"></i> ${issue}
+                </div>
+            `).join('');
+            document.getElementById('blockingIssues').innerHTML = html;
+        }
+
+        function updateQuickWins(wins) {
+            const html = wins.map(win => `
+                <div class="quick-win">
+                    <i class="fas fa-lightbulb"></i> ${win}
+                </div>
+            `).join('');
+            document.getElementById('quickWins').innerHTML = html;
+        }
+
+        function updateDataCollectionPlan(steps) {
+            const html = steps.map(step => `
+                <div class="data-gap priority-${step.priority.toLowerCase()}">
+                    <h4>${step.data_type}</h4>
+                    <p><strong>Priority:</strong> ${step.priority}</p>
+                    <p><strong>Fields:</strong> ${step.fields.join(', ')}</p>
+                    <p><strong>Method:</strong> ${step.collection_method}</p>
+                    <p><strong>Timeline:</strong> ${step.estimated_effort}</p>
+                </div>
+            `).join('');
+            document.getElementById('dataCollectionPlan').innerHTML = html;
+        }
+
+        function updateCostAnalysisPreview(preview) {
+            const html = `
+                <div class="quick-win">
+                    <h4>Analysis Results (Sample Data)</h4>
+                    <p><strong>Orders Analyzed:</strong> ${preview.total_orders_analyzed}</p>
+                    <p><strong>Current Cost:</strong> $${preview.total_current_cost.toFixed(2)}</p>
+                    <p><strong>Potential Savings:</strong> $${preview.total_potential_savings.toFixed(2)}</p>
+                    <p><strong>Average Savings:</strong> ${preview.average_savings_percentage.toFixed(1)}%</p>
+                </div>
+                
+                <h4>Recommendations:</h4>
+                ${preview.recommendation.map(rec => `
+                    <div class="data-gap">
+                        <i class="fas fa-arrow-right"></i> ${rec}
+                    </div>
+                `).join('')}
+            `;
+            document.getElementById('costAnalysisPreview').innerHTML = html;
+        }
+
+        // Load data on page load
+        document.addEventListener('DOMContentLoaded', loadChallengeReadiness);
+    </script>
+</body>
+</html>
