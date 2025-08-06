@@ -13,11 +13,15 @@ from shipping_optimizer import ShippingOptimizer
 from ups_integration import get_ups_rates_for_order
 from consolidation_optimizer import ConsolidationOptimizer
 from supplier_diversity_tracker import SupplierDiversityTracker
+from automated_shipping_optimizer import AutomatedShippingOptimizer
+from executive_dashboard import ExecutiveDashboard
 
 app = Flask(__name__)
 shipping_optimizer = ShippingOptimizer()
 consolidation_optimizer = ConsolidationOptimizer()
 diversity_tracker = SupplierDiversityTracker()
+automated_optimizer = AutomatedShippingOptimizer()
+executive_dashboard = ExecutiveDashboard()
 
 def load_data():
     """Load the cleaned procurement data"""
@@ -67,6 +71,16 @@ def get_category_breakdown(df):
 def dashboard():
     """Main dashboard page"""
     return render_template('dashboard.html')
+
+@app.route('/automation')
+def automation_dashboard():
+    """Automation dashboard page"""
+    return render_template('automation_dashboard.html')
+
+@app.route('/executive')
+def executive_dashboard_page():
+    """Executive dashboard page"""
+    return render_template('executive_dashboard.html')
 
 @app.route('/api/spend-summary')
 def api_spend_summary():
@@ -164,6 +178,42 @@ def api_diversity_goals():
 def api_diversity_trends():
     """API endpoint for diversity performance trends"""
     return jsonify(diversity_tracker.get_monthly_diversity_trends())
+
+@app.route('/api/auto-carrier-select', methods=['POST'])
+def api_auto_carrier_select():
+    """API endpoint for automated carrier selection"""
+    order_details = request.get_json()
+    return jsonify(automated_optimizer.auto_select_carrier(order_details))
+
+@app.route('/api/automation-alerts')
+def api_automation_alerts():
+    """API endpoint for automation alerts"""
+    return jsonify(automated_optimizer.generate_automation_alerts())
+
+@app.route('/api/shipping-rules')
+def api_shipping_rules():
+    """API endpoint for automated shipping rules"""
+    return jsonify(automated_optimizer.create_shipping_rules())
+
+@app.route('/api/automation-dashboard')
+def api_automation_dashboard():
+    """API endpoint for automation dashboard data"""
+    return jsonify(automated_optimizer.get_automation_dashboard_data())
+
+@app.route('/api/executive-report')
+def api_executive_report():
+    """API endpoint for executive dashboard report"""
+    return jsonify(executive_dashboard.generate_executive_report())
+
+@app.route('/api/consolidation-visibility')
+def api_consolidation_visibility():
+    """API endpoint for enhanced consolidation visibility"""
+    return jsonify(executive_dashboard.get_consolidation_visibility())
+
+@app.route('/api/diversity-visibility')
+def api_diversity_visibility():
+    """API endpoint for enhanced diversity visibility"""
+    return jsonify(executive_dashboard.get_diversity_visibility())
 
 if __name__ == '__main__':
     print("🚀 Starting Freight Optimization Dashboard...")

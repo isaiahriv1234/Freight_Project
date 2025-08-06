@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Dashboard - Freight Optimization</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <style>
+        .executive-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .kpi-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            border-left: 5px solid #3498db;
+        }
+        .kpi-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+        .kpi-label {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            text-transform: uppercase;
+        }
+        .savings { color: #27ae60; border-left-color: #27ae60; }
+        .diversity { color: #e74c3c; border-left-color: #e74c3c; }
+        .opportunities { color: #f39c12; border-left-color: #f39c12; }
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .full-width {
+            grid-column: 1 / -1;
+        }
+        .opportunity-item {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        .opportunity-item.urgent {
+            border-left-color: #e74c3c;
+            background: #fdf2f2;
+        }
+        .diversity-score {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            color: white;
+            font-weight: bold;
+            margin: 5px;
+        }
+        .score-excellent { background: #27ae60; }
+        .score-good { background: #f39c12; }
+        .score-needs-improvement { background: #e74c3c; }
+        .recommendation-card {
+            background: white;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .priority-high { border-left: 4px solid #e74c3c; }
+        .priority-medium { border-left: 4px solid #f39c12; }
+        .priority-low { border-left: 4px solid #27ae60; }
+    </style>
+</head>
+<body>
+    <div class="executive-header">
+        <h1>📊 Executive Dashboard</h1>
+        <p>Real-time visibility into consolidation opportunities and diversity metrics</p>
+        <small id="lastUpdated">Loading...</small>
+    </div>
+
+    <div class="container">
+        <!-- KPI Summary -->
+        <div class="kpi-grid" id="kpiGrid">
+            <div class="kpi-card savings">
+                <div class="kpi-label">Total Cost Savings Potential</div>
+                <div class="kpi-value" id="totalSavings">$-</div>
+            </div>
+            <div class="kpi-card diversity">
+                <div class="kpi-label">Diversity Performance</div>
+                <div class="kpi-value" id="diversityPerformance">-%</div>
+            </div>
+            <div class="kpi-card opportunities">
+                <div class="kpi-label">Consolidation Opportunities</div>
+                <div class="kpi-value" id="consolidationOpps">-</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Annual Savings Projection</div>
+                <div class="kpi-value" id="annualSavings">$-</div>
+            </div>
+        </div>
+
+        <!-- Main Dashboard Grid -->
+        <div class="dashboard-grid">
+            <!-- Consolidation Visibility -->
+            <div class="card">
+                <h3>📦 Consolidation Opportunities</h3>
+                <div id="consolidationDetails">Loading...</div>
+            </div>
+
+            <!-- Diversity Visibility -->
+            <div class="card">
+                <h3>🏢 Diversity Performance</h3>
+                <div id="diversityDetails">Loading...</div>
+            </div>
+
+            <!-- Cost Savings Breakdown -->
+            <div class="card">
+                <h3>💰 Cost Savings Breakdown</h3>
+                <div id="savingsBreakdown">Loading...</div>
+            </div>
+
+            <!-- Key Recommendations -->
+            <div class="card">
+                <h3>🎯 Key Recommendations</h3>
+                <div id="recommendations">Loading...</div>
+            </div>
+        </div>
+
+        <!-- Urgent Actions -->
+        <div class="card full-width">
+            <h3>🚨 Urgent Actions Required</h3>
+            <div id="urgentActions">Loading...</div>
+        </div>
+    </div>
+
+    <script>
+        // Load executive dashboard data
+        async function loadExecutiveDashboard() {
+            try {
+                const response = await fetch('/api/executive-report');
+                const data = await response.json();
+                
+                // Update KPIs
+                updateKPIs(data.executive_summary, data.cost_savings_visibility);
+                
+                // Update sections
+                updateConsolidationVisibility(data.consolidation_visibility);
+                updateDiversityVisibility(data.diversity_visibility);
+                updateCostSavingsBreakdown(data.cost_savings_visibility);
+                updateRecommendations(data.key_recommendations);
+                updateUrgentActions(data.consolidation_visibility.urgent_opportunities);
+                
+                // Update timestamp
+                document.getElementById('lastUpdated').textContent = 
+                    `Last updated: ${data.report_metadata.generated_at}`;
+                
+            } catch (error) {
+                console.error('Error loading executive dashboard:', error);
+            }
+        }
+
+        function updateKPIs(summary, savings) {
+            document.getElementById('totalSavings').textContent = 
+                '$' + summary.total_cost_savings_potential.toLocaleString();
+            document.getElementById('diversityPerformance').textContent = 
+                summary.diversity_spend_percentage.toFixed(1) + '%';
+            document.getElementById('consolidationOpps').textContent = 
+                summary.consolidation_opportunities;
+            document.getElementById('annualSavings').textContent = 
+                '$' + savings.annual_savings_projection.toLocaleString();
+        }
+
+        function updateConsolidationVisibility(consolidation) {
+            const html = `
+                <div class="opportunity-item">
+                    <strong>High Value Opportunities:</strong> ${consolidation.high_value_opportunities}<br>
+                    <small>Savings potential > $1,000 each</small>
+                </div>
+                <div class="opportunity-item">
+                    <strong>Medium Value:</strong> ${consolidation.medium_value_opportunities} opportunities<br>
+                    <strong>Low Value:</strong> ${consolidation.low_value_opportunities} opportunities
+                </div>
+                <h4>Top Suppliers for Consolidation:</h4>
+                ${consolidation.top_suppliers_for_consolidation.slice(0, 5).map(supplier => `
+                    <div class="opportunity-item">
+                        <strong>${supplier.supplier}</strong><br>
+                        Potential savings: $${supplier.potential_savings.toFixed(2)}<br>
+                        Orders to consolidate: ${supplier.order_count}
+                    </div>
+                `).join('')}
+            `;
+            document.getElementById('consolidationDetails').innerHTML = html;
+        }
+
+        function updateDiversityVisibility(diversity) {
+            let scoresHtml = '';
+            Object.entries(diversity.diversity_performance_scores).forEach(([category, score]) => {
+                const scoreClass = score.status.toLowerCase().replace(' ', '-');
+                scoresHtml += `<span class="diversity-score score-${scoreClass}">${category}: ${score.score.toFixed(0)}%</span>`;
+            });
+
+            const html = `
+                <div class="opportunity-item">
+                    <strong>Overall Performance:</strong> ${diversity.overall_diversity_percentage.toFixed(1)}%<br>
+                    <strong>Goal Status:</strong> ${diversity.diversity_goal_status}<br>
+                    <strong>Risk Level:</strong> ${diversity.compliance_status.risk_level}
+                </div>
+                <h4>Category Scores:</h4>
+                <div>${scoresHtml}</div>
+                <h4>Top Diverse Suppliers:</h4>
+                ${diversity.top_diverse_suppliers.slice(0, 3).map(supplier => `
+                    <div class="opportunity-item">
+                        <strong>${supplier.supplier_name}</strong> (${supplier.diversity_category})<br>
+                        Total spend: $${supplier.total_spend.toLocaleString()}
+                    </div>
+                `).join('')}
+            `;
+            document.getElementById('diversityDetails').innerHTML = html;
+        }
+
+        function updateCostSavingsBreakdown(savings) {
+            const breakdown = savings.savings_breakdown;
+            const html = `
+                <div class="opportunity-item">
+                    <strong>Shipping Optimization:</strong><br>
+                    $${breakdown.shipping_optimization.toLocaleString()}
+                </div>
+                <div class="opportunity-item">
+                    <strong>Consolidation Opportunities:</strong><br>
+                    $${breakdown.consolidation_opportunities.toLocaleString()}
+                </div>
+                <div class="opportunity-item">
+                    <strong>Automation Alerts:</strong><br>
+                    $${breakdown.automation_alerts.toLocaleString()}
+                </div>
+                <div class="opportunity-item">
+                    <strong>ROI Percentage:</strong> ${savings.roi_percentage.toFixed(2)}%<br>
+                    <strong>Payback Period:</strong> ${savings.payback_period_months} month(s)
+                </div>
+            `;
+            document.getElementById('savingsBreakdown').innerHTML = html;
+        }
+
+        function updateRecommendations(recommendations) {
+            const html = recommendations.map(rec => `
+                <div class="recommendation-card priority-${rec.priority.toLowerCase()}">
+                    <h4>${rec.title}</h4>
+                    <p>${rec.description}</p>
+                    <small><strong>Impact:</strong> ${rec.impact} | <strong>Effort:</strong> ${rec.effort}</small>
+                </div>
+            `).join('');
+            document.getElementById('recommendations').innerHTML = html;
+        }
+
+        function updateUrgentActions(urgentOpportunities) {
+            if (urgentOpportunities.length === 0) {
+                document.getElementById('urgentActions').innerHTML = '<p>No urgent actions required at this time.</p>';
+                return;
+            }
+
+            const html = urgentOpportunities.map(opp => `
+                <div class="opportunity-item ${opp.urgency.toLowerCase() === 'high' ? 'urgent' : ''}">
+                    <strong>${opp.supplier}</strong> - ${opp.urgency} Priority<br>
+                    Potential savings: $${opp.potential_savings.toFixed(2)}<br>
+                    Orders to consolidate: ${opp.order_count}<br>
+                    <small>Days since first order: ${opp.days_since_first_order}</small>
+                </div>
+            `).join('');
+            document.getElementById('urgentActions').innerHTML = html;
+        }
+
+        // Load dashboard on page load
+        document.addEventListener('DOMContentLoaded', loadExecutiveDashboard);
+        
+        // Refresh every 5 minutes
+        setInterval(loadExecutiveDashboard, 300000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Shipping Optimization Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <style>
+        .automation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .alert-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 4px solid #007bff;
+        }
+        .alert-card.high { border-left-color: #dc3545; }
+        .alert-card.medium { border-left-color: #ffc107; }
+        .alert-savings { font-size: 1.2em; font-weight: bold; color: #28a745; }
+        .rule-item { 
+            background: #f8f9fa; 
+            padding: 10px; 
+            margin: 5px 0; 
+            border-radius: 4px; 
+        }
+        .automation-summary {
+            display: flex;
+            justify-content: space-around;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .summary-item { text-align: center; }
+        .summary-number { font-size: 2em; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 Automated Shipping Optimization</h1>
+            <p>Real-time automation alerts and cost optimization</p>
+        </header>
+
+        <div class="automation-summary" id="summary">
+            <div class="summary-item">
+                <div class="summary-number" id="totalAlerts">-</div>
+                <div>Active Alerts</div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-number" id="potentialSavings">$-</div>
+                <div>Potential Savings</div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-number" id="activeRules">-</div>
+                <div>Automation Rules</div>
+            </div>
+        </div>
+
+        <div class="automation-grid">
+            <div class="card">
+                <h3>🚨 Automation Alerts</h3>
+                <div id="alertsList">Loading alerts...</div>
+            </div>
+
+            <div class="card">
+                <h3>🚚 Auto Carrier Selection</h3>
+                <div>
+                    <label>Order Value: $</label>
+                    <input type="number" id="orderValue" value="2500" style="width: 100px;">
+                    <button onclick="getCarrierRecommendation()" style="margin-left: 10px;">Get Recommendation</button>
+                </div>
+                <div id="carrierResult" style="margin-top: 15px;"></div>
+            </div>
+
+            <div class="card">
+                <h3>📋 Shipping Rules</h3>
+                <div id="shippingRules">Loading rules...</div>
+            </div>
+
+            <div class="card">
+                <h3>⚡ Recent Automations</h3>
+                <div id="recentAutomations">Loading recent actions...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load dashboard data
+        async function loadDashboard() {
+            try {
+                const response = await fetch('/api/automation-dashboard');
+                const data = await response.json();
+                
+                // Update summary
+                document.getElementById('totalAlerts').textContent = data.summary.total_alerts;
+                document.getElementById('potentialSavings').textContent = '$' + data.summary.total_potential_savings.toFixed(0);
+                document.getElementById('activeRules').textContent = data.summary.automation_rules_active;
+                
+                // Load alerts
+                loadAlerts(data.alerts);
+                
+                // Load shipping rules
+                loadShippingRules(data.shipping_rules);
+                
+                // Load recent automations
+                loadRecentAutomations(data.recent_automations);
+                
+            } catch (error) {
+                console.error('Error loading dashboard:', error);
+            }
+        }
+
+        function loadAlerts(alerts) {
+            const alertsList = document.getElementById('alertsList');
+            if (alerts.length === 0) {
+                alertsList.innerHTML = '<p>No active alerts</p>';
+                return;
+            }
+            
+            alertsList.innerHTML = alerts.slice(0, 5).map(alert => `
+                <div class="alert-card ${alert.priority}">
+                    <h4>${alert.title}</h4>
+                    <p>${alert.description}</p>
+                    <div class="alert-savings">Savings: $${alert.potential_savings.toFixed(2)}</div>
+                    <small>Action: ${alert.action_required}</small>
+                </div>
+            `).join('');
+        }
+
+        function loadShippingRules(rules) {
+            const rulesDiv = document.getElementById('shippingRules');
+            let html = '<h4>Carrier Preferences:</h4>';
+            
+            Object.entries(rules.carrier_preferences).forEach(([range, pref]) => {
+                html += `<div class="rule-item">${range}: ${pref.preferred_carrier} (avg $${pref.avg_cost})</div>`;
+            });
+            
+            html += '<h4>Automation Triggers:</h4>';
+            rules.automation_triggers.forEach(trigger => {
+                html += `<div class="rule-item">${trigger.condition} → ${trigger.action}</div>`;
+            });
+            
+            rulesDiv.innerHTML = html;
+        }
+
+        function loadRecentAutomations(automations) {
+            const automationsDiv = document.getElementById('recentAutomations');
+            automationsDiv.innerHTML = automations.map(auto => `
+                <div class="rule-item">
+                    <strong>${auto.date}</strong><br>
+                    ${auto.action}<br>
+                    <span style="color: #28a745;">Saved: $${auto.savings.toFixed(2)}</span>
+                </div>
+            `).join('');
+        }
+
+        async function getCarrierRecommendation() {
+            const orderValue = document.getElementById('orderValue').value;
+            const resultDiv = document.getElementById('carrierResult');
+            
+            resultDiv.innerHTML = 'Getting recommendation...';
+            
+            try {
+                const response = await fetch('/api/auto-carrier-select', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        order_value: parseFloat(orderValue),
+                        weight: 5.0,
+                        urgency: 'standard'
+                    })
+                });
+                
+                const result = await response.json();
+                
+                resultDiv.innerHTML = `
+                    <div class="rule-item">
+                        <strong>Recommended: ${result.recommended_carrier}</strong><br>
+                        Cost: $${result.estimated_cost.toFixed(2)}<br>
+                        Transit: ${result.estimated_days} days<br>
+                        Confidence: ${result.automation_confidence}%<br>
+                        <small>${result.reasoning}</small>
+                    </div>
+                `;
+            } catch (error) {
+                resultDiv.innerHTML = 'Error getting recommendation';
+            }
+        }
+
+        // Load dashboard on page load
+        document.addEventListener('DOMContentLoaded', loadDashboard);
+        
+        // Refresh every 30 seconds
+        setInterval(loadDashboard, 30000);
+    </script>
+</body>
+</html>
