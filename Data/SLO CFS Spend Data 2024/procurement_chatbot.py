@@ -20,7 +20,7 @@ class ProcurementChatbot:
         # Initialize Bedrock client
         try:
             self.bedrock = boto3.client('bedrock-runtime', region_name='us-west-2')
-            self.model_id = "anthropic.claude-3-5-haiku-20241022-v1:0"
+            self.model_id = "anthropic.claude-3-5-sonnet-20241022-v2:0"
             print("✅ AWS Bedrock connected successfully")
         except:
             print("⚠️  AWS Bedrock not configured. Using local responses.")
