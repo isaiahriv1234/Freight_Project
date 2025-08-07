@@ -1,0 +1,10 @@
+route_id,from_city,to_city,carrier,service,rate,currency,delivery_days,delivery_date,parcel_weight,parcel_dimensions,created_at
+route_1,San Luis Obispo,Los Angeles,USPS,Express,28.1,USD,2,,16,12x8x6,2025-08-07T00:21:33.734043
+route_1,San Luis Obispo,Los Angeles,USPS,Priority,7.06,USD,3,,16,12x8x6,2025-08-07T00:21:33.734077
+route_1,San Luis Obispo,Los Angeles,USPS,GroundAdvantage,5.91,USD,3,,16,12x8x6,2025-08-07T00:21:33.734085
+route_2,San Luis Obispo,San Francisco,USPS,Priority,7.66,USD,3,,24,10x10x8,2025-08-07T00:21:34.043777
+route_2,San Luis Obispo,San Francisco,USPS,GroundAdvantage,6.34,USD,3,,24,10x10x8,2025-08-07T00:21:34.043816
+route_2,San Luis Obispo,San Francisco,USPS,Express,32.4,USD,2,,24,10x10x8,2025-08-07T00:21:34.043829
+route_3,San Luis Obispo,Sacramento,USPS,GroundAdvantage,6.34,USD,3,,32,14x12x10,2025-08-07T00:21:34.348424
+route_3,San Luis Obispo,Sacramento,USPS,Express,32.4,USD,2,,32,14x12x10,2025-08-07T00:21:34.348464
+route_3,San Luis Obispo,Sacramento,USPS,Priority,7.66,USD,3,,32,14x12x10,2025-08-07T00:21:34.348477

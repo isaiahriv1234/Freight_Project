@@ -1,0 +1,82 @@
+data_type,supplier_name,total_amount,shipping_cost,carrier,lead_time_days,diversity_category,consolidation_opportunity,source
+procurement,ADVANCED BIOMEDICAL,252.0,25.2,UPS,14,DVBE,Medium,internal_procurement
+procurement,ADVANCED BIOMEDICAL,576.0,57.6,UPS,14,DVBE,Medium,internal_procurement
+procurement,ADVANCED BIOMEDICAL,3168.0,316.8,FedEx,10,DVBE,High,internal_procurement
+procurement,ADVANCED BIOMEDICAL,3124.0,312.4,FedEx,10,DVBE,High,internal_procurement
+procurement,ADVANCED BIOMEDICAL,660.0,66.0,FedEx,10,DVBE,Medium,internal_procurement
+procurement,ADVANCED BIOMEDICAL,95.0,9.5,Ground,5,DVBE,Low,internal_procurement
+procurement,ADVANCED BIOMEDICAL,380.0,38.0,Ground,5,DVBE,Low,internal_procurement
+procurement,CENTRAL COAST SPECIALTY I,2279.0,227.9,Freight,21,DVBE,High,internal_procurement
+procurement,CENTRAL COAST SPECIALTY I,673.0,67.3,Freight,21,DVBE,High,internal_procurement
+procurement,DEEP BLUE INTEGRATION INC,930.0,93.0,UPS,14,DVBE,Medium,internal_procurement
+procurement,DEEP BLUE INTEGRATION INC,68640.0,6864.0,Freight,28,DVBE,Very High,internal_procurement
+procurement,DEEP BLUE INTEGRATION INC,1040.0,104.0,Ground,7,DVBE,Medium,internal_procurement
+procurement,DEEP BLUE INTEGRATION INC,5491.2,0.0,,0,DVBE,Low,internal_procurement
+procurement,DEEP BLUE INTEGRATION INC,1472.0,0.0,,0,DVBE,Low,internal_procurement
+procurement,DEEP BLUE INTEGRATION INC,6006.0,0.0,,0,DVBE,Low,internal_procurement
+procurement,DEEP BLUE INTEGRATION INC,13950.0,1395.0,Freight,21,DVBE,High,internal_procurement
+procurement,DEEP BLUE INTEGRATION INC,3860.0,386.0,UPS,14,DVBE,Medium,internal_procurement
+procurement,DEEP BLUE INTEGRATION INC,23109.38,2310.94,FedEx,10,DVBE,High,internal_procurement
+procurement,DEEP BLUE INTEGRATION INC,12400.0,1240.0,Ground,7,DVBE,Medium,internal_procurement
+procurement,DEEP BLUE INTEGRATION INC,620.0,62.0,UPS,7,DVBE,Low,internal_procurement
+procurement,DEEP BLUE INTEGRATION INC,2450.0,245.0,Ground,14,DVBE,Medium,internal_procurement
+procurement,DEEP BLUE INTEGRATION INC,5412.0,541.2,Ground,14,DVBE,Medium,internal_procurement
+procurement,DEEP BLUE INTEGRATION INC,30498.0,3049.8,Electronic,1,DVBE,High,internal_procurement
+procurement,DEEP BLUE INTEGRATION INC,30498.0,3049.8,Electronic,1,DVBE,High,internal_procurement
+procurement,DEEP BLUE INTEGRATION INC,30498.0,3049.8,Electronic,1,DVBE,High,internal_procurement
+procurement,DEEP BLUE INTEGRATION INC,14880.0,1488.0,Electronic,1,DVBE,Medium,internal_procurement
+procurement,DEEP BLUE INTEGRATION INC,9000.0,900.0,Ground,7,DVBE,Medium,internal_procurement
+procurement,A-TOWN AV INC,1231.06,123.11,UPS,14,OSB,Medium,internal_procurement
+procurement,A-TOWN AV INC,1218.12,121.81,Freight,21,OSB,Medium,internal_procurement
+procurement,A-TOWN AV INC,399.04,39.9,Freight,21,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,235.04,23.5,Ground,7,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,70.21,7.02,Ground,7,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,90.28,0.0,,0,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,26.96,0.0,,0,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,1516.08,151.61,Freight,21,OSB,Medium,internal_procurement
+procurement,A-TOWN AV INC,26.4,2.64,Ground,7,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,109.91,0.0,,0,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,502.28,50.23,UPS,14,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,315.15,31.52,Ground,7,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,36.41,0.0,,0,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,340.0,34.0,Ground,7,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,510.42,51.04,UPS,7,OSB,Medium,internal_procurement
+procurement,A-TOWN AV INC,322.0,32.2,UPS,7,OSB,Medium,internal_procurement
+procurement,A-TOWN AV INC,7.86,0.79,Ground,3,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,43.42,4.34,Ground,3,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,2614.22,261.42,Freight,14,OSB,High,internal_procurement
+procurement,A-TOWN AV INC,2103.8,210.38,Freight,14,OSB,High,internal_procurement
+procurement,A-TOWN AV INC,441.15,44.12,UPS,10,OSB,Medium,internal_procurement
+procurement,A-TOWN AV INC,628.55,62.86,UPS,10,OSB,Medium,internal_procurement
+procurement,A-TOWN AV INC,472.55,47.26,UPS,10,OSB,Medium,internal_procurement
+procurement,A-TOWN AV INC,48.35,4.84,Ground,5,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,303.65,30.37,Ground,5,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,40.53,4.05,Ground,5,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,34.05,3.41,Ground,5,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,491.71,49.17,Ground,7,OSB,Medium,internal_procurement
+procurement,A-TOWN AV INC,486.19,48.62,Ground,7,OSB,Medium,internal_procurement
+procurement,A-TOWN AV INC,128.27,12.83,Ground,5,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,79.32,7.93,Ground,5,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,66.92,6.69,Ground,5,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,19.78,1.98,Ground,5,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,29.74,2.97,Ground,5,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,15.7,1.57,Ground,5,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,118.05,11.81,Ground,7,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,744.75,74.48,Ground,7,OSB,Medium,internal_procurement
+procurement,A-TOWN AV INC,137.56,13.76,Ground,7,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,116.13,11.61,Ground,7,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,7.86,0.79,UPS,10,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,3833.39,383.34,Freight,14,OSB,High,internal_procurement
+procurement,A-TOWN AV INC,80.0,8.0,Ground,7,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,8.61,0.86,Ground,5,OSB,Low,internal_procurement
+procurement,A-TOWN AV INC,710.14,71.01,Ground,7,OSB,Medium,internal_procurement
+procurement,A-TOWN AV INC,80.07,8.01,Ground,7,OSB,Low,internal_procurement
+shipping_rate,San Luis Obispo_to_Los Angeles,0.0,28.1,USPS,2,external_rate,medium,easypost_api
+shipping_rate,San Luis Obispo_to_Los Angeles,0.0,7.06,USPS,3,external_rate,medium,easypost_api
+shipping_rate,San Luis Obispo_to_Los Angeles,0.0,5.91,USPS,3,external_rate,medium,easypost_api
+shipping_rate,San Luis Obispo_to_San Francisco,0.0,7.66,USPS,3,external_rate,medium,easypost_api
+shipping_rate,San Luis Obispo_to_San Francisco,0.0,6.34,USPS,3,external_rate,medium,easypost_api
+shipping_rate,San Luis Obispo_to_San Francisco,0.0,32.4,USPS,2,external_rate,medium,easypost_api
+shipping_rate,San Luis Obispo_to_Sacramento,0.0,6.34,USPS,3,external_rate,medium,easypost_api
+shipping_rate,San Luis Obispo_to_Sacramento,0.0,32.4,USPS,2,external_rate,medium,easypost_api
+shipping_rate,San Luis Obispo_to_Sacramento,0.0,7.66,USPS,3,external_rate,medium,easypost_api

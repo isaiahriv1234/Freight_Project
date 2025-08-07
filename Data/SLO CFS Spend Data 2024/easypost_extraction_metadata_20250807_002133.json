@@ -1,0 +1,10 @@
+{
+  "extraction_timestamp": "20250807_002133",
+  "api_key_used": "EZTKb7ab37...",
+  "total_shipments": 0,
+  "total_addresses": 0,
+  "total_rates": 9,
+  "files_created": [
+    "easypost_shipping_rates_20250807_002133.csv"
+  ]
+}

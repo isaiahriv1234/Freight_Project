@@ -1,0 +1,5 @@
+Supplier_Name,Supplier_Diversity_Category,Total_Amount_sum,Total_Amount_mean,Total_Amount_count,Shipping_Cost_sum,Shipping_Cost_mean,Lead_Time_Days_mean,shipping_ratio,avg_order_value,total_orders
+A-TOWN AV INC,OSB,20841.68,463.15,45,2057.85,45.73,7.69,9.87,463.15,45
+ADVANCED BIOMEDICAL,DVBE,8255.0,1179.29,7,825.5,117.93,9.71,10.0,1179.29,7
+CENTRAL COAST SPECIALTY I,DVBE,2952.0,1476.0,2,295.2,147.6,21.0,10.0,1476.0,2
+DEEP BLUE INTEGRATION INC,DVBE,260754.58,14486.37,18,24778.54,1376.59,8.17,9.5,14486.37,18

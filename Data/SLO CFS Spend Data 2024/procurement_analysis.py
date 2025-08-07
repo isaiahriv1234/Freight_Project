@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Procurement Optimization Analysis Script
+Procurement Optimization Analysis Script with EasyPost Integration
 Addresses: Manual decentralized purchasing, shipping cost optimization, 
 consolidation opportunities, and supplier diversity tracking
 """
@@ -11,6 +11,24 @@ from datetime import datetime, timedelta
 import matplotlib.pyplot as plt
 import seaborn as sns
 from collections import defaultdict
+
+# EasyPost Integration
+try:
+    import easypost
+    import os
+    from dotenv import load_dotenv
+    
+    load_dotenv()  # Load .env file
+    api_key = os.getenv('EASYPOST_API_KEY')
+    if api_key:
+        easypost.api_key = api_key
+        EASYPOST_AVAILABLE = True
+    else:
+        EASYPOST_AVAILABLE = False
+        print("⚠️  EASYPOST_API_KEY not found in .env file")
+except ImportError:
+    EASYPOST_AVAILABLE = False
+    print("⚠️  EasyPost not installed. Run: pip install easypost python-dotenv")
 
 def load_and_clean_data(file_path):
     """Load and clean the procurement data"""
@@ -212,17 +230,101 @@ def generate_recommendations(df):
     
     return recommendations
 
+def get_real_shipping_rates(order_data):
+    """Get real shipping rates using EasyPost API"""
+    if not EASYPOST_AVAILABLE:
+        return []
+    
+    try:
+        shipment = easypost.Shipment.create(
+            to_address={
+                "name": "Cal Poly SLO",
+                "street1": "1 Grand Ave",
+                "city": "San Luis Obispo",
+                "state": "CA",
+                "zip": "93407",
+                "country": "US"
+            },
+            from_address={
+                "name": order_data['supplier_name'],
+                "street1": "123 Supplier St",
+                "city": "San Luis Obispo",
+                "state": "CA",
+                "zip": "93401",
+                "country": "US"
+            },
+            parcel={
+                "length": 12,
+                "width": 8,
+                "height": 6,
+                "weight": 16
+            }
+        )
+        
+        rates = []
+        for rate in shipment.rates:
+            rates.append({
+                'carrier': rate.carrier,
+                'service': rate.service,
+                'cost': float(rate.rate),
+                'delivery_days': rate.delivery_days
+            })
+        
+        return sorted(rates, key=lambda x: x['cost'])
+        
+    except Exception as e:
+        print(f"EasyPost API Error: {e}")
+        return []
+
+def analyze_with_real_rates(df):
+    """Analyze shipping with real EasyPost rates"""
+    if not EASYPOST_AVAILABLE:
+        print("\n⚠️  EasyPost integration not available")
+        return
+    
+    print("\n=== REAL-TIME SHIPPING RATE ANALYSIS ===")
+    
+    total_potential_savings = 0
+    sample_orders = df.head(5)  # Test with first 5 orders
+    
+    for _, order in sample_orders.iterrows():
+        order_data = {
+            'supplier_name': order['Supplier_Name'],
+            'total_amount': order['Total_Amount']
+        }
+        
+        real_rates = get_real_shipping_rates(order_data)
+        if real_rates:
+            best_rate = real_rates[0]
+            current_cost = order['Shipping_Cost']
+            potential_savings = max(0, current_cost - best_rate['cost'])
+            total_potential_savings += potential_savings
+            
+            print(f"\n{order['Supplier_Name']}:")
+            print(f"  Current: ${current_cost:.2f}")
+            print(f"  Best Rate: ${best_rate['cost']:.2f} ({best_rate['carrier']} {best_rate['service']})")
+            print(f"  Potential Savings: ${potential_savings:.2f}")
+    
+    print(f"\n💰 Total Potential Savings (sample): ${total_potential_savings:.2f}")
+    
+    # Extrapolate to full dataset
+    if len(sample_orders) > 0:
+        avg_savings_per_order = total_potential_savings / len(sample_orders)
+        estimated_total_savings = avg_savings_per_order * len(df)
+        print(f"📊 Estimated Total Savings: ${estimated_total_savings:,.2f}")
+
 def main():
-    """Main analysis function"""
-    print("PROCUREMENT OPTIMIZATION ANALYSIS")
-    print("=" * 50)
+    """Main analysis function with EasyPost integration"""
+    print("🚀 PROCUREMENT OPTIMIZATION ANALYSIS WITH EASYPOST")
+    print("=" * 60)
     
     # Load data
     df = load_and_clean_data('/Users/isaiahrivera/Desktop/Summer_Camp/Freight_Project/Data/SLO CFS Spend Data 2024/Cleaned_Procurement_Data.csv')
     
-    print(f"Loaded {len(df)} procurement records")
-    print(f"Date range: {df['PO_Date'].min()} to {df['PO_Date'].max()}")
-    print(f"Total spend: ${df['Total_Amount'].sum():,.2f}")
+    print(f"📊 Loaded {len(df)} procurement records")
+    print(f"📅 Date range: {df['PO_Date'].min()} to {df['PO_Date'].max()}")
+    print(f"💰 Total spend: ${df['Total_Amount'].sum():,.2f}")
+    print(f"🚚 Total shipping: ${df['Shipping_Cost'].sum():,.2f}")
     
     # Run analyses
     spend_analysis = analyze_historical_spend(df)
@@ -230,11 +332,15 @@ def main():
     consolidation_analysis = recommend_consolidation_strategies(df)
     diversity_tracking = track_supplier_diversity(df)
     diverse_matching = identify_diverse_suppliers(df)
+    
+    # NEW: Real-time shipping analysis with EasyPost
+    analyze_with_real_rates(df)
+    
     recommendations = generate_recommendations(df)
     
-    print(f"\n{'='*50}")
-    print("ANALYSIS COMPLETE")
-    print("Review recommendations above to optimize procurement processes.")
+    print(f"\n{'='*60}")
+    print("✅ ANALYSIS COMPLETE WITH EASYPOST INTEGRATION")
+    print("🚀 Run 'python easypost_shipping_optimizer.py' for full optimization")
 
 if __name__ == "__main__":
     main()
