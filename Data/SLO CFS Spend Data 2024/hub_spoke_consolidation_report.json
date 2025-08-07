@@ -1,0 +1,372 @@
+{
+  "consolidation_summary": {
+    "total_packages_consolidated": 36,
+    "total_consolidated_shipments": 6,
+    "consolidation_ratio": 0.167,
+    "total_original_shipping_cost": 1697.07,
+    "total_consolidated_shipping_cost": 1765.74,
+    "total_cost_savings": 681.33,
+    "savings_percentage": 40.1,
+    "average_time_improvement_days": -0.7
+  },
+  "hub_performance": {
+    "Los Angeles Hub": {
+      "shipment_count": 4,
+      "total_packages": 32,
+      "total_value": 13707.41,
+      "total_savings": 615.31,
+      "avg_time_improvement": -1.0,
+      "utilization_rate": 27.414820000000002
+    },
+    "San Francisco Hub": {
+      "shipment_count": 1,
+      "total_packages": 1,
+      "total_value": 673.0,
+      "total_savings": -21.33,
+      "avg_time_improvement": 0.0,
+      "utilization_rate": 0.8973333333333333
+    },
+    "Sacramento Hub": {
+      "shipment_count": 1,
+      "total_packages": 3,
+      "total_value": 2590.0,
+      "total_savings": 87.35,
+      "avg_time_improvement": 0.0,
+      "utilization_rate": 8.633333333333333
+    }
+  },
+  "consolidated_shipments": [
+    {
+      "consolidation_id": "Los_Angeles_Hub_A-TOWN_AV_INC_0",
+      "hub_name": "Los Angeles Hub",
+      "supplier": "A-TOWN AV INC",
+      "package_count": 10,
+      "total_value": 6337.4,
+      "original_shipping_cost": 633.74,
+      "consolidated_shipping_cost": 563.99,
+      "cost_savings": 69.75,
+      "admin_savings": 225,
+      "total_savings": 294.75,
+      "original_lead_time": 21,
+      "consolidated_lead_time": 22,
+      "time_efficiency": -1,
+      "supplier_to_hub_cost": 380.24,
+      "hub_processing_cost": 150,
+      "hub_to_slo_cost": 33.75,
+      "delivery_schedule": {
+        "order_date": "2025-08-07",
+        "estimated_delivery": "2025-08-29",
+        "total_transit_days": 22,
+        "business_days": 20
+      },
+      "packages": [
+        {
+          "value": 1231.06,
+          "original_shipping": 123.11
+        },
+        {
+          "value": 1218.12,
+          "original_shipping": 121.81
+        },
+        {
+          "value": 399.04,
+          "original_shipping": 39.9
+        },
+        {
+          "value": 235.04,
+          "original_shipping": 23.5
+        },
+        {
+          "value": 70.21,
+          "original_shipping": 7.02
+        },
+        {
+          "value": 1516.08,
+          "original_shipping": 151.61
+        },
+        {
+          "value": 502.28,
+          "original_shipping": 50.23
+        },
+        {
+          "value": 315.15,
+          "original_shipping": 31.52
+        },
+        {
+          "value": 340.0,
+          "original_shipping": 34.0
+        },
+        {
+          "value": 510.42,
+          "original_shipping": 51.04
+        }
+      ]
+    },
+    {
+      "consolidation_id": "Los_Angeles_Hub_A-TOWN_AV_INC_1",
+      "hub_name": "Los Angeles Hub",
+      "supplier": "A-TOWN AV INC",
+      "package_count": 10,
+      "total_value": 3420.31,
+      "original_shipping_cost": 342.05,
+      "consolidated_shipping_cost": 393.48,
+      "cost_savings": -51.43,
+      "admin_savings": 225,
+      "total_savings": 173.57,
+      "original_lead_time": 10,
+      "consolidated_lead_time": 11,
+      "time_efficiency": -1,
+      "supplier_to_hub_cost": 205.23,
+      "hub_processing_cost": 150,
+      "hub_to_slo_cost": 38.25,
+      "delivery_schedule": {
+        "order_date": "2025-08-07",
+        "estimated_delivery": "2025-08-18",
+        "total_transit_days": 11,
+        "business_days": 9
+      },
+      "packages": [
+        {
+          "value": 322.0,
+          "original_shipping": 32.2
+        },
+        {
+          "value": 441.15,
+          "original_shipping": 44.12
+        },
+        {
+          "value": 628.55,
+          "original_shipping": 62.86
+        },
+        {
+          "value": 472.55,
+          "original_shipping": 47.26
+        },
+        {
+          "value": 303.65,
+          "original_shipping": 30.37
+        },
+        {
+          "value": 491.71,
+          "original_shipping": 49.17
+        },
+        {
+          "value": 486.19,
+          "original_shipping": 48.62
+        },
+        {
+          "value": 128.27,
+          "original_shipping": 12.83
+        },
+        {
+          "value": 79.32,
+          "original_shipping": 7.93
+        },
+        {
+          "value": 66.92,
+          "original_shipping": 6.69
+        }
+      ]
+    },
+    {
+      "consolidation_id": "Los_Angeles_Hub_A-TOWN_AV_INC_2",
+      "hub_name": "Los Angeles Hub",
+      "supplier": "A-TOWN AV INC",
+      "package_count": 7,
+      "total_value": 1986.7,
+      "original_shipping_cost": 198.68,
+      "consolidated_shipping_cost": 264.71,
+      "cost_savings": -66.03,
+      "admin_savings": 150,
+      "total_savings": 83.97,
+      "original_lead_time": 7,
+      "consolidated_lead_time": 8,
+      "time_efficiency": -1,
+      "supplier_to_hub_cost": 119.21,
+      "hub_processing_cost": 105,
+      "hub_to_slo_cost": 40.5,
+      "delivery_schedule": {
+        "order_date": "2025-08-07",
+        "estimated_delivery": "2025-08-15",
+        "total_transit_days": 8,
+        "business_days": 6
+      },
+      "packages": [
+        {
+          "value": 118.05,
+          "original_shipping": 11.81
+        },
+        {
+          "value": 744.75,
+          "original_shipping": 74.48
+        },
+        {
+          "value": 137.56,
+          "original_shipping": 13.76
+        },
+        {
+          "value": 116.13,
+          "original_shipping": 11.61
+        },
+        {
+          "value": 80.0,
+          "original_shipping": 8.0
+        },
+        {
+          "value": 710.14,
+          "original_shipping": 71.01
+        },
+        {
+          "value": 80.07,
+          "original_shipping": 8.01
+        }
+      ]
+    },
+    {
+      "consolidation_id": "Los_Angeles_Hub_ADVANCED_BIOMEDICAL_0",
+      "hub_name": "Los Angeles Hub",
+      "supplier": "ADVANCED BIOMEDICAL",
+      "package_count": 5,
+      "total_value": 1963.0,
+      "original_shipping_cost": 196.3,
+      "consolidated_shipping_cost": 233.28,
+      "cost_savings": -36.98,
+      "admin_savings": 100,
+      "total_savings": 63.02,
+      "original_lead_time": 14,
+      "consolidated_lead_time": 15,
+      "time_efficiency": -1,
+      "supplier_to_hub_cost": 117.78,
+      "hub_processing_cost": 75,
+      "hub_to_slo_cost": 40.5,
+      "delivery_schedule": {
+        "order_date": "2025-08-07",
+        "estimated_delivery": "2025-08-22",
+        "total_transit_days": 15,
+        "business_days": 13
+      },
+      "packages": [
+        {
+          "value": 252.0,
+          "original_shipping": 25.2
+        },
+        {
+          "value": 576.0,
+          "original_shipping": 57.6
+        },
+        {
+          "value": 660.0,
+          "original_shipping": 66.0
+        },
+        {
+          "value": 95.0,
+          "original_shipping": 9.5
+        },
+        {
+          "value": 380.0,
+          "original_shipping": 38.0
+        }
+      ]
+    },
+    {
+      "consolidation_id": "Sacramento_Hub_DEEP_BLUE_INTEGRATION_INC_0",
+      "hub_name": "Sacramento Hub",
+      "supplier": "DEEP BLUE INTEGRATION INC",
+      "package_count": 3,
+      "total_value": 2590.0,
+      "original_shipping_cost": 259.0,
+      "consolidated_shipping_cost": 221.65,
+      "cost_savings": 37.35,
+      "admin_savings": 50,
+      "total_savings": 87.35,
+      "original_lead_time": 14,
+      "consolidated_lead_time": 14,
+      "time_efficiency": 0,
+      "supplier_to_hub_cost": 155.4,
+      "hub_processing_cost": 45,
+      "hub_to_slo_cost": 21.25,
+      "delivery_schedule": {
+        "order_date": "2025-08-07",
+        "estimated_delivery": "2025-08-21",
+        "total_transit_days": 14,
+        "business_days": 12
+      },
+      "packages": [
+        {
+          "value": 930.0,
+          "original_shipping": 93.0
+        },
+        {
+          "value": 1040.0,
+          "original_shipping": 104.0
+        },
+        {
+          "value": 620.0,
+          "original_shipping": 62.0
+        }
+      ]
+    },
+    {
+      "consolidation_id": "San_Francisco_Hub_CENTRAL_COAST_SPECIALTY_I_0",
+      "hub_name": "San Francisco Hub",
+      "supplier": "CENTRAL COAST SPECIALTY I",
+      "package_count": 1,
+      "total_value": 673.0,
+      "original_shipping_cost": 67.3,
+      "consolidated_shipping_cost": 88.63,
+      "cost_savings": -21.33,
+      "admin_savings": 0,
+      "total_savings": -21.33,
+      "original_lead_time": 21,
+      "consolidated_lead_time": 21,
+      "time_efficiency": 0,
+      "supplier_to_hub_cost": 40.38,
+      "hub_processing_cost": 15,
+      "hub_to_slo_cost": 33.25,
+      "delivery_schedule": {
+        "order_date": "2025-08-07",
+        "estimated_delivery": "2025-08-28",
+        "total_transit_days": 21,
+        "business_days": 19
+      },
+      "packages": [
+        {
+          "value": 673.0,
+          "original_shipping": 67.3
+        }
+      ]
+    }
+  ],
+  "implementation_plan": {
+    "phase_1_setup": [
+      "Establish partnerships with regional hub facilities",
+      "Set up consolidation processing capabilities",
+      "Implement tracking and inventory management systems",
+      "Train staff on hub and spoke procedures"
+    ],
+    "phase_2_pilot": [
+      "Launch pilot program with A-TOWN AV INC (45 packages)",
+      "Test consolidation processes and measure savings",
+      "Optimize routing and timing procedures",
+      "Gather performance data and feedback"
+    ],
+    "phase_3_expansion": [
+      "Expand to all suppliers and product categories",
+      "Implement automated consolidation scheduling",
+      "Negotiate volume discounts with carriers",
+      "Deploy real-time tracking and reporting"
+    ],
+    "timeline": "6 months total implementation",
+    "estimated_setup_cost": 25000,
+    "break_even_period": "8 months"
+  },
+  "roi_analysis": {
+    "annual_cost_savings": 8175.96,
+    "setup_investment": 25000,
+    "annual_operational_cost": 24000,
+    "net_annual_savings": -15824.04,
+    "roi_percentage": -63.3,
+    "payback_period_months": -19.0,
+    "packages_processed_annually": 432
+  }
+}

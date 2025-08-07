@@ -1,0 +1,2256 @@
+{
+  "generation_timestamp": "2025-08-07T10:02:29.010869",
+  "summary": {
+    "total_recommendations": 82,
+    "carrier_recommendations": 74,
+    "consolidation_recommendations": 4,
+    "volume_discount_opportunities": 4,
+    "total_potential_monthly_savings": 67851.76,
+    "total_potential_annual_savings": 814221.09
+  },
+  "carrier_optimization": [
+    {
+      "supplier": "ADVANCED BIOMEDICAL",
+      "order_value": 252.0,
+      "current_shipping": 25.2,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "UPS",
+          "recommended_carrier": "Electronic",
+          "current_cost": 25.2,
+          "recommended_cost": 2.52,
+          "savings": 22.68,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $22.68"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "UPS",
+          "recommended_carrier": "USPS",
+          "current_time": 14,
+          "recommended_time": 2,
+          "time_savings": 12,
+          "cost_impact": 2.9,
+          "reason": "Switch to USPS to save 12 days"
+        }
+      ]
+    },
+    {
+      "supplier": "ADVANCED BIOMEDICAL",
+      "order_value": 576.0,
+      "current_shipping": 57.6,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "UPS",
+          "recommended_carrier": "Electronic",
+          "current_cost": 57.6,
+          "recommended_cost": 5.76,
+          "savings": 51.84,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $51.84"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "UPS",
+          "recommended_carrier": "USPS",
+          "current_time": 14,
+          "recommended_time": 2,
+          "time_savings": 12,
+          "cost_impact": -29.5,
+          "reason": "Switch to USPS to save 12 days"
+        }
+      ]
+    },
+    {
+      "supplier": "ADVANCED BIOMEDICAL",
+      "order_value": 3168.0,
+      "current_shipping": 316.8,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "FedEx",
+          "recommended_carrier": "USPS",
+          "current_cost": 316.8,
+          "recommended_cost": 5.91,
+          "savings": 310.89,
+          "savings_percentage": 98.1,
+          "time_impact": -7,
+          "reason": "Switch to USPS to save $310.89"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "FedEx",
+          "recommended_carrier": "USPS",
+          "current_time": 10,
+          "recommended_time": 2,
+          "time_savings": 8,
+          "cost_impact": -288.7,
+          "reason": "Switch to USPS to save 8 days"
+        }
+      ]
+    },
+    {
+      "supplier": "ADVANCED BIOMEDICAL",
+      "order_value": 3124.0,
+      "current_shipping": 312.4,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "FedEx",
+          "recommended_carrier": "USPS",
+          "current_cost": 312.4,
+          "recommended_cost": 5.91,
+          "savings": 306.49,
+          "savings_percentage": 98.1,
+          "time_impact": -7,
+          "reason": "Switch to USPS to save $306.49"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "FedEx",
+          "recommended_carrier": "USPS",
+          "current_time": 10,
+          "recommended_time": 2,
+          "time_savings": 8,
+          "cost_impact": -284.3,
+          "reason": "Switch to USPS to save 8 days"
+        }
+      ]
+    },
+    {
+      "supplier": "ADVANCED BIOMEDICAL",
+      "order_value": 660.0,
+      "current_shipping": 66.0,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "FedEx",
+          "recommended_carrier": "USPS",
+          "current_cost": 66.0,
+          "recommended_cost": 5.91,
+          "savings": 60.09,
+          "savings_percentage": 91.0,
+          "time_impact": -7,
+          "reason": "Switch to USPS to save $60.09"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "FedEx",
+          "recommended_carrier": "USPS",
+          "current_time": 10,
+          "recommended_time": 2,
+          "time_savings": 8,
+          "cost_impact": -37.9,
+          "reason": "Switch to USPS to save 8 days"
+        }
+      ]
+    },
+    {
+      "supplier": "ADVANCED BIOMEDICAL",
+      "order_value": 95.0,
+      "current_shipping": 9.5,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "Medium",
+          "current_carrier": "Ground",
+          "recommended_carrier": "Electronic",
+          "current_cost": 9.5,
+          "recommended_cost": 0.95,
+          "savings": 8.55,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $8.55"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "Medium",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 5,
+          "recommended_time": 2,
+          "time_savings": 3,
+          "cost_impact": 18.6,
+          "reason": "Switch to USPS to save 3 days"
+        }
+      ]
+    },
+    {
+      "supplier": "ADVANCED BIOMEDICAL",
+      "order_value": 380.0,
+      "current_shipping": 38.0,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "Electronic",
+          "current_cost": 38.0,
+          "recommended_cost": 3.8,
+          "savings": 34.2,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $34.20"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "Medium",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 5,
+          "recommended_time": 2,
+          "time_savings": 3,
+          "cost_impact": -9.9,
+          "reason": "Switch to USPS to save 3 days"
+        }
+      ]
+    },
+    {
+      "supplier": "CENTRAL COAST SPECIALTY I",
+      "order_value": 2279.0,
+      "current_shipping": 227.9,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "Freight",
+          "recommended_carrier": "USPS",
+          "current_cost": 227.9,
+          "recommended_cost": 5.91,
+          "savings": 221.99,
+          "savings_percentage": 97.4,
+          "time_impact": -18,
+          "reason": "Switch to USPS to save $221.99"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Freight",
+          "recommended_carrier": "USPS",
+          "current_time": 21,
+          "recommended_time": 2,
+          "time_savings": 19,
+          "cost_impact": -199.8,
+          "reason": "Switch to USPS to save 19 days"
+        }
+      ]
+    },
+    {
+      "supplier": "CENTRAL COAST SPECIALTY I",
+      "order_value": 673.0,
+      "current_shipping": 67.3,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "Freight",
+          "recommended_carrier": "USPS",
+          "current_cost": 67.3,
+          "recommended_cost": 5.91,
+          "savings": 61.39,
+          "savings_percentage": 91.2,
+          "time_impact": -18,
+          "reason": "Switch to USPS to save $61.39"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Freight",
+          "recommended_carrier": "USPS",
+          "current_time": 21,
+          "recommended_time": 2,
+          "time_savings": 19,
+          "cost_impact": -39.2,
+          "reason": "Switch to USPS to save 19 days"
+        }
+      ]
+    },
+    {
+      "supplier": "DEEP BLUE INTEGRATION INC",
+      "order_value": 930.0,
+      "current_shipping": 93.0,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "UPS",
+          "recommended_carrier": "USPS",
+          "current_cost": 93.0,
+          "recommended_cost": 5.91,
+          "savings": 87.09,
+          "savings_percentage": 93.6,
+          "time_impact": -11,
+          "reason": "Switch to USPS to save $87.09"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "UPS",
+          "recommended_carrier": "USPS",
+          "current_time": 14,
+          "recommended_time": 2,
+          "time_savings": 12,
+          "cost_impact": -64.9,
+          "reason": "Switch to USPS to save 12 days"
+        }
+      ]
+    },
+    {
+      "supplier": "DEEP BLUE INTEGRATION INC",
+      "order_value": 68640.0,
+      "current_shipping": 6864.0,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "Freight",
+          "recommended_carrier": "USPS",
+          "current_cost": 6864.0,
+          "recommended_cost": 5.91,
+          "savings": 6858.09,
+          "savings_percentage": 99.9,
+          "time_impact": -25,
+          "reason": "Switch to USPS to save $6858.09"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Freight",
+          "recommended_carrier": "USPS",
+          "current_time": 28,
+          "recommended_time": 2,
+          "time_savings": 26,
+          "cost_impact": -6835.9,
+          "reason": "Switch to USPS to save 26 days"
+        }
+      ]
+    },
+    {
+      "supplier": "DEEP BLUE INTEGRATION INC",
+      "order_value": 1040.0,
+      "current_shipping": 104.0,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_cost": 104.0,
+          "recommended_cost": 5.91,
+          "savings": 98.09,
+          "savings_percentage": 94.3,
+          "time_impact": -4,
+          "reason": "Switch to USPS to save $98.09"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 7,
+          "recommended_time": 2,
+          "time_savings": 5,
+          "cost_impact": -75.9,
+          "reason": "Switch to USPS to save 5 days"
+        }
+      ]
+    },
+    {
+      "supplier": "DEEP BLUE INTEGRATION INC",
+      "order_value": 13950.0,
+      "current_shipping": 1395.0,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "Freight",
+          "recommended_carrier": "USPS",
+          "current_cost": 1395.0,
+          "recommended_cost": 5.91,
+          "savings": 1389.09,
+          "savings_percentage": 99.6,
+          "time_impact": -18,
+          "reason": "Switch to USPS to save $1389.09"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Freight",
+          "recommended_carrier": "USPS",
+          "current_time": 21,
+          "recommended_time": 2,
+          "time_savings": 19,
+          "cost_impact": -1366.9,
+          "reason": "Switch to USPS to save 19 days"
+        }
+      ]
+    },
+    {
+      "supplier": "DEEP BLUE INTEGRATION INC",
+      "order_value": 3860.0,
+      "current_shipping": 386.0,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "UPS",
+          "recommended_carrier": "USPS",
+          "current_cost": 386.0,
+          "recommended_cost": 5.91,
+          "savings": 380.09,
+          "savings_percentage": 98.5,
+          "time_impact": -11,
+          "reason": "Switch to USPS to save $380.09"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "UPS",
+          "recommended_carrier": "USPS",
+          "current_time": 14,
+          "recommended_time": 2,
+          "time_savings": 12,
+          "cost_impact": -357.9,
+          "reason": "Switch to USPS to save 12 days"
+        }
+      ]
+    },
+    {
+      "supplier": "DEEP BLUE INTEGRATION INC",
+      "order_value": 23109.38,
+      "current_shipping": 2310.94,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "FedEx",
+          "recommended_carrier": "USPS",
+          "current_cost": 2310.94,
+          "recommended_cost": 5.91,
+          "savings": 2305.03,
+          "savings_percentage": 99.7,
+          "time_impact": -7,
+          "reason": "Switch to USPS to save $2305.03"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "FedEx",
+          "recommended_carrier": "USPS",
+          "current_time": 10,
+          "recommended_time": 2,
+          "time_savings": 8,
+          "cost_impact": -2282.84,
+          "reason": "Switch to USPS to save 8 days"
+        }
+      ]
+    },
+    {
+      "supplier": "DEEP BLUE INTEGRATION INC",
+      "order_value": 12400.0,
+      "current_shipping": 1240.0,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_cost": 1240.0,
+          "recommended_cost": 5.91,
+          "savings": 1234.09,
+          "savings_percentage": 99.5,
+          "time_impact": -4,
+          "reason": "Switch to USPS to save $1234.09"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 7,
+          "recommended_time": 2,
+          "time_savings": 5,
+          "cost_impact": -1211.9,
+          "reason": "Switch to USPS to save 5 days"
+        }
+      ]
+    },
+    {
+      "supplier": "DEEP BLUE INTEGRATION INC",
+      "order_value": 620.0,
+      "current_shipping": 62.0,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "UPS",
+          "recommended_carrier": "USPS",
+          "current_cost": 62.0,
+          "recommended_cost": 5.91,
+          "savings": 56.09,
+          "savings_percentage": 90.5,
+          "time_impact": -4,
+          "reason": "Switch to USPS to save $56.09"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "UPS",
+          "recommended_carrier": "USPS",
+          "current_time": 7,
+          "recommended_time": 2,
+          "time_savings": 5,
+          "cost_impact": -33.9,
+          "reason": "Switch to USPS to save 5 days"
+        }
+      ]
+    },
+    {
+      "supplier": "DEEP BLUE INTEGRATION INC",
+      "order_value": 2450.0,
+      "current_shipping": 245.0,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_cost": 245.0,
+          "recommended_cost": 5.91,
+          "savings": 239.09,
+          "savings_percentage": 97.6,
+          "time_impact": -11,
+          "reason": "Switch to USPS to save $239.09"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 14,
+          "recommended_time": 2,
+          "time_savings": 12,
+          "cost_impact": -216.9,
+          "reason": "Switch to USPS to save 12 days"
+        }
+      ]
+    },
+    {
+      "supplier": "DEEP BLUE INTEGRATION INC",
+      "order_value": 5412.0,
+      "current_shipping": 541.2,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_cost": 541.2,
+          "recommended_cost": 5.91,
+          "savings": 535.29,
+          "savings_percentage": 98.9,
+          "time_impact": -11,
+          "reason": "Switch to USPS to save $535.29"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 14,
+          "recommended_time": 2,
+          "time_savings": 12,
+          "cost_impact": -513.1,
+          "reason": "Switch to USPS to save 12 days"
+        }
+      ]
+    },
+    {
+      "supplier": "DEEP BLUE INTEGRATION INC",
+      "order_value": 30498.0,
+      "current_shipping": 3049.8,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "Electronic",
+          "recommended_carrier": "USPS",
+          "current_cost": 3049.8,
+          "recommended_cost": 5.91,
+          "savings": 3043.89,
+          "savings_percentage": 99.8,
+          "time_impact": 2,
+          "reason": "Switch to USPS to save $3043.89"
+        }
+      ]
+    },
+    {
+      "supplier": "DEEP BLUE INTEGRATION INC",
+      "order_value": 30498.0,
+      "current_shipping": 3049.8,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "Electronic",
+          "recommended_carrier": "USPS",
+          "current_cost": 3049.8,
+          "recommended_cost": 5.91,
+          "savings": 3043.89,
+          "savings_percentage": 99.8,
+          "time_impact": 2,
+          "reason": "Switch to USPS to save $3043.89"
+        }
+      ]
+    },
+    {
+      "supplier": "DEEP BLUE INTEGRATION INC",
+      "order_value": 30498.0,
+      "current_shipping": 3049.8,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "Electronic",
+          "recommended_carrier": "USPS",
+          "current_cost": 3049.8,
+          "recommended_cost": 5.91,
+          "savings": 3043.89,
+          "savings_percentage": 99.8,
+          "time_impact": 2,
+          "reason": "Switch to USPS to save $3043.89"
+        }
+      ]
+    },
+    {
+      "supplier": "DEEP BLUE INTEGRATION INC",
+      "order_value": 14880.0,
+      "current_shipping": 1488.0,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "Electronic",
+          "recommended_carrier": "USPS",
+          "current_cost": 1488.0,
+          "recommended_cost": 5.91,
+          "savings": 1482.09,
+          "savings_percentage": 99.6,
+          "time_impact": 2,
+          "reason": "Switch to USPS to save $1482.09"
+        }
+      ]
+    },
+    {
+      "supplier": "DEEP BLUE INTEGRATION INC",
+      "order_value": 9000.0,
+      "current_shipping": 900.0,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_cost": 900.0,
+          "recommended_cost": 5.91,
+          "savings": 894.09,
+          "savings_percentage": 99.3,
+          "time_impact": -4,
+          "reason": "Switch to USPS to save $894.09"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 7,
+          "recommended_time": 2,
+          "time_savings": 5,
+          "cost_impact": -871.9,
+          "reason": "Switch to USPS to save 5 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 1231.06,
+      "current_shipping": 123.11,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "UPS",
+          "recommended_carrier": "USPS",
+          "current_cost": 123.11,
+          "recommended_cost": 5.91,
+          "savings": 117.2,
+          "savings_percentage": 95.2,
+          "time_impact": -11,
+          "reason": "Switch to USPS to save $117.20"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "UPS",
+          "recommended_carrier": "USPS",
+          "current_time": 14,
+          "recommended_time": 2,
+          "time_savings": 12,
+          "cost_impact": -95.01,
+          "reason": "Switch to USPS to save 12 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 1218.12,
+      "current_shipping": 121.81,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "Freight",
+          "recommended_carrier": "USPS",
+          "current_cost": 121.81,
+          "recommended_cost": 5.91,
+          "savings": 115.9,
+          "savings_percentage": 95.1,
+          "time_impact": -18,
+          "reason": "Switch to USPS to save $115.90"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Freight",
+          "recommended_carrier": "USPS",
+          "current_time": 21,
+          "recommended_time": 2,
+          "time_savings": 19,
+          "cost_impact": -93.71,
+          "reason": "Switch to USPS to save 19 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 399.04,
+      "current_shipping": 39.9,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "Freight",
+          "recommended_carrier": "Electronic",
+          "current_cost": 39.9,
+          "recommended_cost": 3.99,
+          "savings": 35.91,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $35.91"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Freight",
+          "recommended_carrier": "USPS",
+          "current_time": 21,
+          "recommended_time": 2,
+          "time_savings": 19,
+          "cost_impact": -11.8,
+          "reason": "Switch to USPS to save 19 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 235.04,
+      "current_shipping": 23.5,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "Electronic",
+          "current_cost": 23.5,
+          "recommended_cost": 2.35,
+          "savings": 21.15,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $21.15"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 7,
+          "recommended_time": 2,
+          "time_savings": 5,
+          "cost_impact": 4.6,
+          "reason": "Switch to USPS to save 5 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 70.21,
+      "current_shipping": 7.02,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "Medium",
+          "current_carrier": "Ground",
+          "recommended_carrier": "Electronic",
+          "current_cost": 7.02,
+          "recommended_cost": 0.7,
+          "savings": 6.32,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $6.32"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 7,
+          "recommended_time": 2,
+          "time_savings": 5,
+          "cost_impact": 21.08,
+          "reason": "Switch to USPS to save 5 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 1516.08,
+      "current_shipping": 151.61,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "Freight",
+          "recommended_carrier": "USPS",
+          "current_cost": 151.61,
+          "recommended_cost": 5.91,
+          "savings": 145.7,
+          "savings_percentage": 96.1,
+          "time_impact": -18,
+          "reason": "Switch to USPS to save $145.70"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Freight",
+          "recommended_carrier": "USPS",
+          "current_time": 21,
+          "recommended_time": 2,
+          "time_savings": 19,
+          "cost_impact": -123.51,
+          "reason": "Switch to USPS to save 19 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 26.4,
+      "current_shipping": 2.64,
+      "recommendations": [
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 7,
+          "recommended_time": 2,
+          "time_savings": 5,
+          "cost_impact": 25.46,
+          "reason": "Switch to USPS to save 5 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 502.28,
+      "current_shipping": 50.23,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "UPS",
+          "recommended_carrier": "Electronic",
+          "current_cost": 50.23,
+          "recommended_cost": 5.02,
+          "savings": 45.21,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $45.21"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "UPS",
+          "recommended_carrier": "USPS",
+          "current_time": 14,
+          "recommended_time": 2,
+          "time_savings": 12,
+          "cost_impact": -22.13,
+          "reason": "Switch to USPS to save 12 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 315.15,
+      "current_shipping": 31.52,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "Electronic",
+          "current_cost": 31.52,
+          "recommended_cost": 3.15,
+          "savings": 28.37,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $28.37"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 7,
+          "recommended_time": 2,
+          "time_savings": 5,
+          "cost_impact": -3.42,
+          "reason": "Switch to USPS to save 5 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 340.0,
+      "current_shipping": 34.0,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "Electronic",
+          "current_cost": 34.0,
+          "recommended_cost": 3.4,
+          "savings": 30.6,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $30.60"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 7,
+          "recommended_time": 2,
+          "time_savings": 5,
+          "cost_impact": -5.9,
+          "reason": "Switch to USPS to save 5 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 510.42,
+      "current_shipping": 51.04,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "UPS",
+          "recommended_carrier": "Electronic",
+          "current_cost": 51.04,
+          "recommended_cost": 5.1,
+          "savings": 45.94,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $45.94"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "UPS",
+          "recommended_carrier": "USPS",
+          "current_time": 7,
+          "recommended_time": 2,
+          "time_savings": 5,
+          "cost_impact": -22.94,
+          "reason": "Switch to USPS to save 5 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 322.0,
+      "current_shipping": 32.2,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "UPS",
+          "recommended_carrier": "Electronic",
+          "current_cost": 32.2,
+          "recommended_cost": 3.22,
+          "savings": 28.98,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $28.98"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "UPS",
+          "recommended_carrier": "USPS",
+          "current_time": 7,
+          "recommended_time": 2,
+          "time_savings": 5,
+          "cost_impact": -4.1,
+          "reason": "Switch to USPS to save 5 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 7.86,
+      "current_shipping": 0.79,
+      "recommendations": [
+        {
+          "type": "time_optimization",
+          "priority": "Medium",
+          "current_carrier": "Ground",
+          "recommended_carrier": "Freight",
+          "current_time": 3,
+          "recommended_time": 1,
+          "time_savings": 2,
+          "cost_impact": -0.08,
+          "reason": "Switch to Freight to save 2 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 43.42,
+      "current_shipping": 4.34,
+      "recommendations": [
+        {
+          "type": "time_optimization",
+          "priority": "Medium",
+          "current_carrier": "Ground",
+          "recommended_carrier": "Freight",
+          "current_time": 3,
+          "recommended_time": 1,
+          "time_savings": 2,
+          "cost_impact": -0.43,
+          "reason": "Switch to Freight to save 2 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 2614.22,
+      "current_shipping": 261.42,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "Freight",
+          "recommended_carrier": "USPS",
+          "current_cost": 261.42,
+          "recommended_cost": 5.91,
+          "savings": 255.51,
+          "savings_percentage": 97.7,
+          "time_impact": -11,
+          "reason": "Switch to USPS to save $255.51"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Freight",
+          "recommended_carrier": "USPS",
+          "current_time": 14,
+          "recommended_time": 2,
+          "time_savings": 12,
+          "cost_impact": -233.32,
+          "reason": "Switch to USPS to save 12 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 2103.8,
+      "current_shipping": 210.38,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "Freight",
+          "recommended_carrier": "USPS",
+          "current_cost": 210.38,
+          "recommended_cost": 5.91,
+          "savings": 204.47,
+          "savings_percentage": 97.2,
+          "time_impact": -11,
+          "reason": "Switch to USPS to save $204.47"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Freight",
+          "recommended_carrier": "USPS",
+          "current_time": 14,
+          "recommended_time": 2,
+          "time_savings": 12,
+          "cost_impact": -182.28,
+          "reason": "Switch to USPS to save 12 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 441.15,
+      "current_shipping": 44.12,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "UPS",
+          "recommended_carrier": "Electronic",
+          "current_cost": 44.12,
+          "recommended_cost": 4.41,
+          "savings": 39.71,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $39.71"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "UPS",
+          "recommended_carrier": "USPS",
+          "current_time": 10,
+          "recommended_time": 2,
+          "time_savings": 8,
+          "cost_impact": -16.02,
+          "reason": "Switch to USPS to save 8 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 628.55,
+      "current_shipping": 62.86,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "UPS",
+          "recommended_carrier": "USPS",
+          "current_cost": 62.86,
+          "recommended_cost": 5.91,
+          "savings": 56.95,
+          "savings_percentage": 90.6,
+          "time_impact": -7,
+          "reason": "Switch to USPS to save $56.95"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "UPS",
+          "recommended_carrier": "USPS",
+          "current_time": 10,
+          "recommended_time": 2,
+          "time_savings": 8,
+          "cost_impact": -34.76,
+          "reason": "Switch to USPS to save 8 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 472.55,
+      "current_shipping": 47.26,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "UPS",
+          "recommended_carrier": "Electronic",
+          "current_cost": 47.26,
+          "recommended_cost": 4.73,
+          "savings": 42.53,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $42.53"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "UPS",
+          "recommended_carrier": "USPS",
+          "current_time": 10,
+          "recommended_time": 2,
+          "time_savings": 8,
+          "cost_impact": -19.16,
+          "reason": "Switch to USPS to save 8 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 48.35,
+      "current_shipping": 4.84,
+      "recommendations": [
+        {
+          "type": "time_optimization",
+          "priority": "Medium",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 5,
+          "recommended_time": 2,
+          "time_savings": 3,
+          "cost_impact": 23.26,
+          "reason": "Switch to USPS to save 3 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 303.65,
+      "current_shipping": 30.37,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "Electronic",
+          "current_cost": 30.37,
+          "recommended_cost": 3.04,
+          "savings": 27.33,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $27.33"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "Medium",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 5,
+          "recommended_time": 2,
+          "time_savings": 3,
+          "cost_impact": -2.27,
+          "reason": "Switch to USPS to save 3 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 40.53,
+      "current_shipping": 4.05,
+      "recommendations": [
+        {
+          "type": "time_optimization",
+          "priority": "Medium",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 5,
+          "recommended_time": 2,
+          "time_savings": 3,
+          "cost_impact": 24.05,
+          "reason": "Switch to USPS to save 3 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 34.05,
+      "current_shipping": 3.41,
+      "recommendations": [
+        {
+          "type": "time_optimization",
+          "priority": "Medium",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 5,
+          "recommended_time": 2,
+          "time_savings": 3,
+          "cost_impact": 24.69,
+          "reason": "Switch to USPS to save 3 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 491.71,
+      "current_shipping": 49.17,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "Electronic",
+          "current_cost": 49.17,
+          "recommended_cost": 4.92,
+          "savings": 44.25,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $44.25"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 7,
+          "recommended_time": 2,
+          "time_savings": 5,
+          "cost_impact": -21.07,
+          "reason": "Switch to USPS to save 5 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 486.19,
+      "current_shipping": 48.62,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "Electronic",
+          "current_cost": 48.62,
+          "recommended_cost": 4.86,
+          "savings": 43.76,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $43.76"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 7,
+          "recommended_time": 2,
+          "time_savings": 5,
+          "cost_impact": -20.52,
+          "reason": "Switch to USPS to save 5 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 128.27,
+      "current_shipping": 12.83,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "Medium",
+          "current_carrier": "Ground",
+          "recommended_carrier": "Electronic",
+          "current_cost": 12.83,
+          "recommended_cost": 1.28,
+          "savings": 11.55,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $11.55"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "Medium",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 5,
+          "recommended_time": 2,
+          "time_savings": 3,
+          "cost_impact": 15.27,
+          "reason": "Switch to USPS to save 3 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 79.32,
+      "current_shipping": 7.93,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "Medium",
+          "current_carrier": "Ground",
+          "recommended_carrier": "Electronic",
+          "current_cost": 7.93,
+          "recommended_cost": 0.79,
+          "savings": 7.14,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $7.14"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "Medium",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 5,
+          "recommended_time": 2,
+          "time_savings": 3,
+          "cost_impact": 20.17,
+          "reason": "Switch to USPS to save 3 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 66.92,
+      "current_shipping": 6.69,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "Medium",
+          "current_carrier": "Ground",
+          "recommended_carrier": "Electronic",
+          "current_cost": 6.69,
+          "recommended_cost": 0.67,
+          "savings": 6.02,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $6.02"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "Medium",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 5,
+          "recommended_time": 2,
+          "time_savings": 3,
+          "cost_impact": 21.41,
+          "reason": "Switch to USPS to save 3 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 19.78,
+      "current_shipping": 1.98,
+      "recommendations": [
+        {
+          "type": "time_optimization",
+          "priority": "Medium",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 5,
+          "recommended_time": 2,
+          "time_savings": 3,
+          "cost_impact": 26.12,
+          "reason": "Switch to USPS to save 3 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 29.74,
+      "current_shipping": 2.97,
+      "recommendations": [
+        {
+          "type": "time_optimization",
+          "priority": "Medium",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 5,
+          "recommended_time": 2,
+          "time_savings": 3,
+          "cost_impact": 25.13,
+          "reason": "Switch to USPS to save 3 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 15.7,
+      "current_shipping": 1.57,
+      "recommendations": [
+        {
+          "type": "time_optimization",
+          "priority": "Medium",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 5,
+          "recommended_time": 2,
+          "time_savings": 3,
+          "cost_impact": 26.53,
+          "reason": "Switch to USPS to save 3 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 118.05,
+      "current_shipping": 11.81,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "Medium",
+          "current_carrier": "Ground",
+          "recommended_carrier": "Electronic",
+          "current_cost": 11.81,
+          "recommended_cost": 1.18,
+          "savings": 10.63,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $10.63"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 7,
+          "recommended_time": 2,
+          "time_savings": 5,
+          "cost_impact": 16.29,
+          "reason": "Switch to USPS to save 5 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 744.75,
+      "current_shipping": 74.48,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_cost": 74.48,
+          "recommended_cost": 5.91,
+          "savings": 68.57,
+          "savings_percentage": 92.1,
+          "time_impact": -4,
+          "reason": "Switch to USPS to save $68.57"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 7,
+          "recommended_time": 2,
+          "time_savings": 5,
+          "cost_impact": -46.38,
+          "reason": "Switch to USPS to save 5 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 137.56,
+      "current_shipping": 13.76,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "Medium",
+          "current_carrier": "Ground",
+          "recommended_carrier": "Electronic",
+          "current_cost": 13.76,
+          "recommended_cost": 1.38,
+          "savings": 12.38,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $12.38"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 7,
+          "recommended_time": 2,
+          "time_savings": 5,
+          "cost_impact": 14.34,
+          "reason": "Switch to USPS to save 5 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 116.13,
+      "current_shipping": 11.61,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "Medium",
+          "current_carrier": "Ground",
+          "recommended_carrier": "Electronic",
+          "current_cost": 11.61,
+          "recommended_cost": 1.16,
+          "savings": 10.45,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $10.45"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 7,
+          "recommended_time": 2,
+          "time_savings": 5,
+          "cost_impact": 16.49,
+          "reason": "Switch to USPS to save 5 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 7.86,
+      "current_shipping": 0.79,
+      "recommendations": [
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "UPS",
+          "recommended_carrier": "USPS",
+          "current_time": 10,
+          "recommended_time": 2,
+          "time_savings": 8,
+          "cost_impact": 27.31,
+          "reason": "Switch to USPS to save 8 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 3833.39,
+      "current_shipping": 383.34,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "Freight",
+          "recommended_carrier": "USPS",
+          "current_cost": 383.34,
+          "recommended_cost": 5.91,
+          "savings": 377.43,
+          "savings_percentage": 98.5,
+          "time_impact": -11,
+          "reason": "Switch to USPS to save $377.43"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Freight",
+          "recommended_carrier": "USPS",
+          "current_time": 14,
+          "recommended_time": 2,
+          "time_savings": 12,
+          "cost_impact": -355.24,
+          "reason": "Switch to USPS to save 12 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 80.0,
+      "current_shipping": 8.0,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "Medium",
+          "current_carrier": "Ground",
+          "recommended_carrier": "Electronic",
+          "current_cost": 8.0,
+          "recommended_cost": 0.8,
+          "savings": 7.2,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $7.20"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 7,
+          "recommended_time": 2,
+          "time_savings": 5,
+          "cost_impact": 20.1,
+          "reason": "Switch to USPS to save 5 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 8.61,
+      "current_shipping": 0.86,
+      "recommendations": [
+        {
+          "type": "time_optimization",
+          "priority": "Medium",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 5,
+          "recommended_time": 2,
+          "time_savings": 3,
+          "cost_impact": 27.24,
+          "reason": "Switch to USPS to save 3 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 710.14,
+      "current_shipping": 71.01,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_cost": 71.01,
+          "recommended_cost": 5.91,
+          "savings": 65.1,
+          "savings_percentage": 91.7,
+          "time_impact": -4,
+          "reason": "Switch to USPS to save $65.10"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 7,
+          "recommended_time": 2,
+          "time_savings": 5,
+          "cost_impact": -42.91,
+          "reason": "Switch to USPS to save 5 days"
+        }
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "order_value": 80.07,
+      "current_shipping": 8.01,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "Medium",
+          "current_carrier": "Ground",
+          "recommended_carrier": "Electronic",
+          "current_cost": 8.01,
+          "recommended_cost": 0.8,
+          "savings": 7.21,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $7.21"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "High",
+          "current_carrier": "Ground",
+          "recommended_carrier": "USPS",
+          "current_time": 7,
+          "recommended_time": 2,
+          "time_savings": 5,
+          "cost_impact": 20.09,
+          "reason": "Switch to USPS to save 5 days"
+        }
+      ]
+    },
+    {
+      "supplier": "San Luis Obispo_to_Los Angeles",
+      "order_value": 0.0,
+      "current_shipping": 28.1,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "USPS",
+          "recommended_carrier": "Electronic",
+          "current_cost": 28.1,
+          "recommended_cost": 2.81,
+          "savings": 25.29,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $25.29"
+        }
+      ]
+    },
+    {
+      "supplier": "San Luis Obispo_to_Los Angeles",
+      "order_value": 0.0,
+      "current_shipping": 7.06,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "Medium",
+          "current_carrier": "USPS",
+          "recommended_carrier": "Electronic",
+          "current_cost": 7.06,
+          "recommended_cost": 0.71,
+          "savings": 6.35,
+          "savings_percentage": 89.9,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $6.35"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "Medium",
+          "current_carrier": "USPS",
+          "recommended_carrier": "Freight",
+          "current_time": 3,
+          "recommended_time": 1,
+          "time_savings": 2,
+          "cost_impact": -0.71,
+          "reason": "Switch to Freight to save 2 days"
+        }
+      ]
+    },
+    {
+      "supplier": "San Luis Obispo_to_Los Angeles",
+      "order_value": 0.0,
+      "current_shipping": 5.91,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "Medium",
+          "current_carrier": "USPS",
+          "recommended_carrier": "Electronic",
+          "current_cost": 5.91,
+          "recommended_cost": 0.59,
+          "savings": 5.32,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $5.32"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "Medium",
+          "current_carrier": "USPS",
+          "recommended_carrier": "Freight",
+          "current_time": 3,
+          "recommended_time": 1,
+          "time_savings": 2,
+          "cost_impact": -0.59,
+          "reason": "Switch to Freight to save 2 days"
+        }
+      ]
+    },
+    {
+      "supplier": "San Luis Obispo_to_San Francisco",
+      "order_value": 0.0,
+      "current_shipping": 7.66,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "Medium",
+          "current_carrier": "USPS",
+          "recommended_carrier": "Electronic",
+          "current_cost": 7.66,
+          "recommended_cost": 0.77,
+          "savings": 6.89,
+          "savings_percentage": 89.9,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $6.89"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "Medium",
+          "current_carrier": "USPS",
+          "recommended_carrier": "Freight",
+          "current_time": 3,
+          "recommended_time": 1,
+          "time_savings": 2,
+          "cost_impact": -0.77,
+          "reason": "Switch to Freight to save 2 days"
+        }
+      ]
+    },
+    {
+      "supplier": "San Luis Obispo_to_San Francisco",
+      "order_value": 0.0,
+      "current_shipping": 6.34,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "Medium",
+          "current_carrier": "USPS",
+          "recommended_carrier": "Electronic",
+          "current_cost": 6.34,
+          "recommended_cost": 0.63,
+          "savings": 5.71,
+          "savings_percentage": 90.1,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $5.71"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "Medium",
+          "current_carrier": "USPS",
+          "recommended_carrier": "Freight",
+          "current_time": 3,
+          "recommended_time": 1,
+          "time_savings": 2,
+          "cost_impact": -0.63,
+          "reason": "Switch to Freight to save 2 days"
+        }
+      ]
+    },
+    {
+      "supplier": "San Luis Obispo_to_San Francisco",
+      "order_value": 0.0,
+      "current_shipping": 32.4,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "USPS",
+          "recommended_carrier": "Electronic",
+          "current_cost": 32.4,
+          "recommended_cost": 3.24,
+          "savings": 29.16,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $29.16"
+        }
+      ]
+    },
+    {
+      "supplier": "San Luis Obispo_to_Sacramento",
+      "order_value": 0.0,
+      "current_shipping": 6.34,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "Medium",
+          "current_carrier": "USPS",
+          "recommended_carrier": "Electronic",
+          "current_cost": 6.34,
+          "recommended_cost": 0.63,
+          "savings": 5.71,
+          "savings_percentage": 90.1,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $5.71"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "Medium",
+          "current_carrier": "USPS",
+          "recommended_carrier": "Freight",
+          "current_time": 3,
+          "recommended_time": 1,
+          "time_savings": 2,
+          "cost_impact": -0.63,
+          "reason": "Switch to Freight to save 2 days"
+        }
+      ]
+    },
+    {
+      "supplier": "San Luis Obispo_to_Sacramento",
+      "order_value": 0.0,
+      "current_shipping": 32.4,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "High",
+          "current_carrier": "USPS",
+          "recommended_carrier": "Electronic",
+          "current_cost": 32.4,
+          "recommended_cost": 3.24,
+          "savings": 29.16,
+          "savings_percentage": 90.0,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $29.16"
+        }
+      ]
+    },
+    {
+      "supplier": "San Luis Obispo_to_Sacramento",
+      "order_value": 0.0,
+      "current_shipping": 7.66,
+      "recommendations": [
+        {
+          "type": "cost_optimization",
+          "priority": "Medium",
+          "current_carrier": "USPS",
+          "recommended_carrier": "Electronic",
+          "current_cost": 7.66,
+          "recommended_cost": 0.77,
+          "savings": 6.89,
+          "savings_percentage": 89.9,
+          "time_impact": 0,
+          "reason": "Switch to Electronic to save $6.89"
+        },
+        {
+          "type": "time_optimization",
+          "priority": "Medium",
+          "current_carrier": "USPS",
+          "recommended_carrier": "Freight",
+          "current_time": 3,
+          "recommended_time": 1,
+          "time_savings": 2,
+          "cost_impact": -0.77,
+          "reason": "Switch to Freight to save 2 days"
+        }
+      ]
+    }
+  ],
+  "consolidation_opportunities": [
+    {
+      "supplier": "A-TOWN AV INC",
+      "current_orders": 45,
+      "current_shipping_cost": 2057.85,
+      "recommended_scenario": {
+        "name": "Monthly Consolidation",
+        "target_orders": 5,
+        "estimated_shipping": 1028.93,
+        "total_savings": 1028.93,
+        "frequency": "Monthly",
+        "implementation_difficulty": "High"
+      },
+      "priority": "High",
+      "implementation_steps": [
+        "Contact A-TOWN AV INC to discuss monthly ordering schedule",
+        "Negotiate minimum order quantities to reduce to 5 orders",
+        "Set up inventory buffer to support larger order quantities",
+        "Implement automated reorder points and scheduling",
+        "Monitor savings and adjust monthly schedule as needed"
+      ]
+    },
+    {
+      "supplier": "ADVANCED BIOMEDICAL",
+      "current_orders": 7,
+      "current_shipping_cost": 825.5,
+      "recommended_scenario": {
+        "name": "Monthly Consolidation",
+        "target_orders": 1,
+        "estimated_shipping": 412.75,
+        "total_savings": 412.75,
+        "frequency": "Monthly",
+        "implementation_difficulty": "High"
+      },
+      "priority": "High",
+      "implementation_steps": [
+        "Contact ADVANCED BIOMEDICAL to discuss monthly ordering schedule",
+        "Negotiate minimum order quantities to reduce to 1 orders",
+        "Set up inventory buffer to support larger order quantities",
+        "Implement automated reorder points and scheduling",
+        "Monitor savings and adjust monthly schedule as needed"
+      ]
+    },
+    {
+      "supplier": "CENTRAL COAST SPECIALTY I",
+      "current_orders": 2,
+      "current_shipping_cost": 295.2,
+      "recommended_scenario": {
+        "name": "Monthly Consolidation",
+        "target_orders": 1,
+        "estimated_shipping": 147.6,
+        "total_savings": 147.6,
+        "frequency": "Monthly",
+        "implementation_difficulty": "High"
+      },
+      "priority": "Medium",
+      "implementation_steps": [
+        "Contact CENTRAL COAST SPECIALTY I to discuss monthly ordering schedule",
+        "Negotiate minimum order quantities to reduce to 1 orders",
+        "Set up inventory buffer to support larger order quantities",
+        "Implement automated reorder points and scheduling",
+        "Monitor savings and adjust monthly schedule as needed"
+      ]
+    },
+    {
+      "supplier": "DEEP BLUE INTEGRATION INC",
+      "current_orders": 18,
+      "current_shipping_cost": 24778.54,
+      "recommended_scenario": {
+        "name": "Monthly Consolidation",
+        "target_orders": 2,
+        "estimated_shipping": 12389.27,
+        "total_savings": 12389.27,
+        "frequency": "Monthly",
+        "implementation_difficulty": "High"
+      },
+      "priority": "High",
+      "implementation_steps": [
+        "Contact DEEP BLUE INTEGRATION INC to discuss monthly ordering schedule",
+        "Negotiate minimum order quantities to reduce to 2 orders",
+        "Set up inventory buffer to support larger order quantities",
+        "Implement automated reorder points and scheduling",
+        "Monitor savings and adjust monthly schedule as needed"
+      ]
+    }
+  ],
+  "volume_discount_opportunities": [
+    {
+      "supplier": "DEEP BLUE INTEGRATION INC",
+      "annual_spend": 3129054.96,
+      "potential_discount": "15.0%",
+      "estimated_annual_savings": 279280.49,
+      "priority": "High",
+      "negotiation_points": [
+        "Annual spend of $3,129,054.96 qualifies for volume pricing",
+        "Request 15.0% discount on shipping and products",
+        "Commit to minimum annual volume in exchange for better rates",
+        "Explore multi-year contracts for additional savings"
+      ]
+    },
+    {
+      "supplier": "A-TOWN AV INC",
+      "annual_spend": 250100.16,
+      "potential_discount": "15.0%",
+      "estimated_annual_savings": 22461.64,
+      "priority": "High",
+      "negotiation_points": [
+        "Annual spend of $250,100.16 qualifies for volume pricing",
+        "Request 15.0% discount on shipping and products",
+        "Commit to minimum annual volume in exchange for better rates",
+        "Explore multi-year contracts for additional savings"
+      ]
+    },
+    {
+      "supplier": "ADVANCED BIOMEDICAL",
+      "annual_spend": 99060.0,
+      "potential_discount": "15.0%",
+      "estimated_annual_savings": 8915.4,
+      "priority": "High",
+      "negotiation_points": [
+        "Annual spend of $99,060.00 qualifies for volume pricing",
+        "Request 15.0% discount on shipping and products",
+        "Commit to minimum annual volume in exchange for better rates",
+        "Explore multi-year contracts for additional savings"
+      ]
+    },
+    {
+      "supplier": "CENTRAL COAST SPECIALTY I",
+      "annual_spend": 35424.0,
+      "potential_discount": "10.0%",
+      "estimated_annual_savings": 2125.44,
+      "priority": "Medium",
+      "negotiation_points": [
+        "Annual spend of $35,424.00 qualifies for volume pricing",
+        "Request 10.0% discount on shipping and products",
+        "Commit to minimum annual volume in exchange for better rates",
+        "Explore multi-year contracts for additional savings"
+      ]
+    }
+  ],
+  "implementation_priority": [
+    {
+      "type": "Volume Discount",
+      "supplier": "DEEP BLUE INTEGRATION INC",
+      "savings": 23273.374166666665,
+      "priority": "High",
+      "implementation_effort": "High",
+      "timeframe": "8-12 weeks",
+      "action": "Negotiate 15.0% volume discount"
+    },
+    {
+      "type": "Order Consolidation",
+      "supplier": "DEEP BLUE INTEGRATION INC",
+      "savings": 12389.27,
+      "priority": "High",
+      "implementation_effort": "High",
+      "timeframe": "4-6 weeks",
+      "action": "Implement monthly consolidation"
+    },
+    {
+      "type": "Carrier Optimization",
+      "supplier": "DEEP BLUE INTEGRATION INC",
+      "savings": 6858.09,
+      "priority": "High",
+      "implementation_effort": "Low",
+      "timeframe": "1-2 weeks",
+      "action": "Switch to USPS to save $6858.09"
+    },
+    {
+      "type": "Carrier Optimization",
+      "supplier": "DEEP BLUE INTEGRATION INC",
+      "savings": 3043.89,
+      "priority": "High",
+      "implementation_effort": "Low",
+      "timeframe": "1-2 weeks",
+      "action": "Switch to USPS to save $3043.89"
+    },
+    {
+      "type": "Carrier Optimization",
+      "supplier": "DEEP BLUE INTEGRATION INC",
+      "savings": 3043.89,
+      "priority": "High",
+      "implementation_effort": "Low",
+      "timeframe": "1-2 weeks",
+      "action": "Switch to USPS to save $3043.89"
+    },
+    {
+      "type": "Carrier Optimization",
+      "supplier": "DEEP BLUE INTEGRATION INC",
+      "savings": 3043.89,
+      "priority": "High",
+      "implementation_effort": "Low",
+      "timeframe": "1-2 weeks",
+      "action": "Switch to USPS to save $3043.89"
+    },
+    {
+      "type": "Carrier Optimization",
+      "supplier": "DEEP BLUE INTEGRATION INC",
+      "savings": 2305.03,
+      "priority": "High",
+      "implementation_effort": "Low",
+      "timeframe": "1-2 weeks",
+      "action": "Switch to USPS to save $2305.03"
+    },
+    {
+      "type": "Volume Discount",
+      "supplier": "A-TOWN AV INC",
+      "savings": 1871.8033333333333,
+      "priority": "High",
+      "implementation_effort": "High",
+      "timeframe": "8-12 weeks",
+      "action": "Negotiate 15.0% volume discount"
+    },
+    {
+      "type": "Carrier Optimization",
+      "supplier": "DEEP BLUE INTEGRATION INC",
+      "savings": 1482.09,
+      "priority": "High",
+      "implementation_effort": "Low",
+      "timeframe": "1-2 weeks",
+      "action": "Switch to USPS to save $1482.09"
+    },
+    {
+      "type": "Carrier Optimization",
+      "supplier": "DEEP BLUE INTEGRATION INC",
+      "savings": 1389.09,
+      "priority": "High",
+      "implementation_effort": "Low",
+      "timeframe": "1-2 weeks",
+      "action": "Switch to USPS to save $1389.09"
+    }
+  ]
+}

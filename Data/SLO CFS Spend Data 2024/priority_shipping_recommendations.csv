@@ -1,0 +1,11 @@
+type,supplier,savings,priority,implementation_effort,timeframe,action
+Volume Discount,DEEP BLUE INTEGRATION INC,23273.374166666665,High,High,8-12 weeks,Negotiate 15.0% volume discount
+Order Consolidation,DEEP BLUE INTEGRATION INC,12389.27,High,High,4-6 weeks,Implement monthly consolidation
+Carrier Optimization,DEEP BLUE INTEGRATION INC,6858.09,High,Low,1-2 weeks,Switch to USPS to save $6858.09
+Carrier Optimization,DEEP BLUE INTEGRATION INC,3043.89,High,Low,1-2 weeks,Switch to USPS to save $3043.89
+Carrier Optimization,DEEP BLUE INTEGRATION INC,3043.89,High,Low,1-2 weeks,Switch to USPS to save $3043.89
+Carrier Optimization,DEEP BLUE INTEGRATION INC,3043.89,High,Low,1-2 weeks,Switch to USPS to save $3043.89
+Carrier Optimization,DEEP BLUE INTEGRATION INC,2305.03,High,Low,1-2 weeks,Switch to USPS to save $2305.03
+Volume Discount,A-TOWN AV INC,1871.8033333333333,High,High,8-12 weeks,Negotiate 15.0% volume discount
+Carrier Optimization,DEEP BLUE INTEGRATION INC,1482.09,High,Low,1-2 weeks,Switch to USPS to save $1482.09
+Carrier Optimization,DEEP BLUE INTEGRATION INC,1389.09,High,Low,1-2 weeks,Switch to USPS to save $1389.09
