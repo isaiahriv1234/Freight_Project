@@ -13,9 +13,20 @@ import os
 
 class ProcurementChatbot:
     def __init__(self):
-        # Load procurement data
-        self.df = pd.read_csv('ml_ready_shipping_dataset_20250807_002135.csv')
-        self.cleaned_df = pd.read_csv('Cleaned_Procurement_Data.csv')
+        # Load procurement data from JSON
+        json_path = 'ml_ready_shipping_dataset.json'
+        if not os.path.exists(json_path):
+            json_path = 'Data/SLO CFS Spend Data 2024/ml_ready_shipping_dataset.json'
+        
+        with open(json_path, 'r') as f:
+            data = json.load(f)
+        self.df = pd.DataFrame(data)
+        
+        # Try to load cleaned data, fallback to main data if not available
+        try:
+            self.cleaned_df = pd.read_csv('Cleaned_Procurement_Data.csv')
+        except FileNotFoundError:
+            self.cleaned_df = self.df.copy()
         
         # Initialize Bedrock client
         try:
