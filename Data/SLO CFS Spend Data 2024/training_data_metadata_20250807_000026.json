@@ -1,34 +1,46 @@
-{
-  "generation_timestamp": "2025-08-07T00:00:26.377829",
-  "files_created": {
-    "ml_training_dataset": "ml_ready_shipping_dataset_20250807_000026.csv",
-    "supplier_summary": "supplier_summary_dataset_20250807_000026.csv"
-  },
-  "dataset_stats": {
-    "total_records": 72,
-    "total_features": 32,
-    "total_spend": 292803.26,
-    "total_shipping": 27957.090000000004,
-    "potential_savings": 4689.384847900157
-  },
-  "feature_descriptions": {
-    "order_value": "Total order amount in USD",
-    "current_shipping_cost": "Current shipping cost in USD",
-    "shipping_cost_ratio": "Shipping cost as percentage of order value",
-    "consolidation_score": "Consolidation opportunity score (1-4)",
-    "optimization_target": "Binary target for optimization (1=needs optimization)",
-    "potential_savings": "Estimated cost savings in USD",
-    "best_alternative_cost": "Lowest cost alternative shipping option"
-  },
-  "usage_instructions": {
-    "primary_file": "ml_ready_shipping_dataset_20250807_000026.csv",
-    "target_variable": "optimization_target",
-    "key_features": [
-      "order_value",
-      "current_shipping_cost",
-      "consolidation_score",
-      "frequency_score"
-    ],
-    "model_type": "Classification or Regression for shipping optimization"
-  }
-}
+# COMMENTED OUT - UNNECESSARY FILE
+# This file has been identified as redundant/obsolete
+# Original file backed up and commented out on cleanup
+# 
+# Original content below:
+# ==================================================
+# # COMMENTED OUT - UNNECESSARY FILE
+# # This file has been identified as redundant/obsolete
+# # Original file backed up and commented out on cleanup
+# # 
+# # Original content below:
+# # ==================================================
+# # {
+# #   "generation_timestamp": "2025-08-07T00:00:26.377829",
+# #   "files_created": {
+# #     "ml_training_dataset": "ml_ready_shipping_dataset_20250807_000026.csv",
+# #     "supplier_summary": "supplier_summary_dataset_20250807_000026.csv"
+# #   },
+# #   "dataset_stats": {
+# #     "total_records": 72,
+# #     "total_features": 32,
+# #     "total_spend": 292803.26,
+# #     "total_shipping": 27957.090000000004,
+# #     "potential_savings": 4689.384847900157
+# #   },
+# #   "feature_descriptions": {
+# #     "order_value": "Total order amount in USD",
+# #     "current_shipping_cost": "Current shipping cost in USD",
+# #     "shipping_cost_ratio": "Shipping cost as percentage of order value",
+# #     "consolidation_score": "Consolidation opportunity score (1-4)",
+# #     "optimization_target": "Binary target for optimization (1=needs optimization)",
+# #     "potential_savings": "Estimated cost savings in USD",
+# #     "best_alternative_cost": "Lowest cost alternative shipping option"
+# #   },
+# #   "usage_instructions": {
+# #     "primary_file": "ml_ready_shipping_dataset_20250807_000026.csv",
+# #     "target_variable": "optimization_target",
+# #     "key_features": [
+# #       "order_value",
+# #       "current_shipping_cost",
+# #       "consolidation_score",
+# #       "frequency_score"
+# #     ],
+# #     "model_type": "Classification or Regression for shipping optimization"
+# #   }
+# # }
