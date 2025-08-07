@@ -13,14 +13,24 @@ import os
 
 class ProcurementChatbot:
     def __init__(self):
-        # Load procurement data from JSON
-        json_path = 'ml_ready_shipping_dataset.json'
-        if not os.path.exists(json_path):
-            json_path = 'Data/SLO CFS Spend Data 2024/ml_ready_shipping_dataset.json'
+        # Load procurement data - try multiple paths
+        data_paths = [
+            'ml_ready_shipping_dataset_20250807_002135.csv',
+            'Freight_Project/Data/SLO CFS Spend Data 2024/ml_ready_shipping_dataset_20250807_002135.csv',
+            '/Users/isaiahrivera/Desktop/Summer_Camp/Freight_Project/Data/SLO CFS Spend Data 2024/ml_ready_shipping_dataset_20250807_002135.csv'
+        ]
         
-        with open(json_path, 'r') as f:
-            data = json.load(f)
-        self.df = pd.DataFrame(data)
+        self.df = None
+        for path in data_paths:
+            try:
+                self.df = pd.read_csv(path)
+                print(f"✅ Loaded data from: {path}")
+                break
+            except FileNotFoundError:
+                continue
+        
+        if self.df is None:
+            raise FileNotFoundError("Could not find ml_ready_shipping_dataset_20250807_002135.csv")
         
         # Try to load cleaned data, fallback to main data if not available
         try:
@@ -28,13 +38,51 @@ class ProcurementChatbot:
         except FileNotFoundError:
             self.cleaned_df = self.df.copy()
         
-        # Initialize Bedrock client
+        # Initialize Bedrock client with model fallback
+        self.bedrock = None
+        self.model_id = None
+        
+        # Try different models in order of preference
+        models_to_try = [
+            "anthropic.claude-3-5-sonnet-20241022-v2:0",
+            "anthropic.claude-3-5-haiku-20241022-v1:0",
+            "anthropic.claude-3-sonnet-20240229-v1:0",
+            "anthropic.claude-3-haiku-20240307-v1:0"
+        ]
+        
         try:
             self.bedrock = boto3.client('bedrock-runtime', region_name='us-west-2')
-            self.model_id = "anthropic.claude-3-5-sonnet-20241022-v2:0"
-            print("✅ AWS Bedrock connected successfully")
-        except:
-            print("⚠️  AWS Bedrock not configured. Using local responses.")
+            
+            # Test each model until one works
+            for model in models_to_try:
+                try:
+                    test_payload = {
+                        "anthropic_version": "bedrock-2023-05-31",
+                        "max_tokens": 10,
+                        "messages": [{"role": "user", "content": "Hi"}]
+                    }
+                    
+                    response = self.bedrock.invoke_model(
+                        modelId=model,
+                        body=json.dumps(test_payload)
+                    )
+                    
+                    self.model_id = model
+                    print(f"✅ AWS Bedrock connected with model: {model}")
+                    break
+                    
+                except Exception as e:
+                    if "AccessDeniedException" in str(e):
+                        continue
+                    else:
+                        raise e
+            
+            if not self.model_id:
+                print("⚠️  No Bedrock models available. Using local responses.")
+                self.bedrock = None
+                
+        except Exception as e:
+            print(f"⚠️  AWS Bedrock error: {str(e)}. Using local responses.")
             self.bedrock = None
         
         # System context about the procurement data
@@ -71,8 +119,8 @@ Answer questions about procurement optimization, shipping costs, supplier divers
     def call_bedrock_model(self, message: str):
         """Send message to AWS Bedrock using working configuration"""
         
-        if not self.bedrock:
-            return "AWS Bedrock not available. Please configure AWS credentials."
+        if not self.bedrock or not self.model_id:
+            return self.get_local_response(message)
         
         try:
             payload = {
@@ -90,7 +138,8 @@ Answer questions about procurement optimization, shipping costs, supplier divers
             return response_body["content"][0]["text"]
             
         except Exception as e:
-            return f"Bedrock Error: {str(e)}"
+            print(f"⚠️  Bedrock error, using local response: {str(e)}")
+            return self.get_local_response(message)
     
     def query_bedrock(self, user_message):
         """Query with procurement context"""
