@@ -1,0 +1,55 @@
+You are a procurement and logistics optimization expert analyzing shipping data for Cal Poly SLO.
+
+DATASET SUMMARY:
+- Total Records: 72 procurement orders
+- Total Order Value: $323,279.89
+- Current Shipping Costs: $32,327.99
+- Potential Annual Savings: $17,452.44
+- Orders with Optimization Opportunities: 54 out of 72
+
+CARRIER DISTRIBUTION:
+- Ground: 28 orders
+- UPS: 13 orders  
+- Freight: 12 orders
+- FedEx: 6 orders
+- Electronic: 6 orders
+- Unknown/Zero: 7 orders
+
+SUPPLIER DIVERSITY:
+- DVBE (Disabled Veteran Business): 27 orders ($248,041 value)
+- OSB (Other Small Business): 45 orders ($75,239 value)
+
+KEY METRICS:
+- Average Shipping Ratio: 10.0% of order value
+- Average Lead Time: 9.4 days
+- Average Consolidation Score: 1.8 (scale 1-4)
+
+SAMPLE HIGH-VALUE ORDERS:
+1. $68,640 order - Freight carrier, 28 days, $6,864 shipping cost, $6,849 potential savings
+2. $30,498 orders (3x) - Electronic delivery, 1 day, $3,050 each shipping cost, $3,035 each potential savings
+3. $23,109 order - FedEx, 10 days, $2,311 shipping cost, $2,296 potential savings
+
+ANALYSIS REQUEST:
+Please provide strategic insights on:
+
+1. COST OPTIMIZATION OPPORTUNITIES
+   - Identify the biggest savings potential from the $17,452 annual savings available
+   - Recommend carrier consolidation strategies based on current distribution
+   - Suggest volume discount negotiations for high-value orders
+
+2. OPERATIONAL EFFICIENCY  
+   - Analyze lead time vs cost trade-offs (current average 9.4 days)
+   - Recommend consolidation improvements (current score 1.8/4.0)
+   - Identify shipping ratio optimization opportunities (current 10%)
+
+3. SUPPLIER DIVERSITY IMPACT
+   - Compare DVBE vs OSB performance and costs
+   - Recommend diversity-cost balance strategies
+   - Assess impact on procurement goals
+
+4. STRATEGIC RECOMMENDATIONS
+   - Top 3 immediate actions for maximum ROI from $17,452 potential savings
+   - Long-term procurement strategy improvements
+   - Risk mitigation recommendations for 28-day lead times
+
+Please provide actionable, data-driven recommendations with specific dollar amounts and percentages where possible.
