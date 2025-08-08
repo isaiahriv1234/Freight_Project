@@ -1,0 +1,232 @@
+/* Success Page Styles */
+
+.success-container {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 3rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.success-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.success-icon {
+    font-size: 4rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    animation: bounceIn 0.6s ease;
+}
+
+.success-title {
+    color: var(--dark-green);
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    animation: fadeInUp 0.8s ease;
+}
+
+.success-message {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease;
+}
+
+/* Order Details */
+.order-details {
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem 0;
+    text-align: left;
+    animation: fadeInUp 1.2s ease;
+}
+
+.order-details h3 {
+    color: var(--dark-green);
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-item .label {
+    font-weight: 600;
+    color: var(--dark-green);
+}
+
+.detail-item .value {
+    font-weight: 500;
+    color: #333;
+    font-family: 'Courier New', monospace;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+    animation: fadeInUp 1.4s ease;
+}
+
+.action-buttons .btn {
+    border-radius: 25px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.action-buttons .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background-color: var(--dark-green);
+    border-color: var(--dark-green);
+}
+
+.btn-primary:hover {
+    background-color: #0f3a1f;
+    border-color: #0f3a1f;
+}
+
+.btn-outline-primary {
+    border-color: var(--dark-green);
+    color: var(--dark-green);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--dark-green);
+    border-color: var(--dark-green);
+    color: var(--white);
+}
+
+/* Home Button */
+.home-button {
+    margin-top: 2rem;
+    animation: fadeInUp 1.6s ease;
+}
+
+.btn-success {
+    background-color: var(--gold);
+    border-color: var(--gold);
+    color: var(--dark-green);
+    border-radius: 25px;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #e6c200;
+    border-color: #e6c200;
+    color: var(--dark-green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .success-container {
+        padding: 2rem 1.5rem;
+        margin: 1rem 0;
+    }
+    
+    .success-title {
+        font-size: 2rem;
+    }
+    
+    .success-message {
+        font-size: 1rem;
+    }
+    
+    .order-details {
+        padding: 1.5rem;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .action-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .detail-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .success-container {
+        padding: 1.5rem 1rem;
+    }
+    
+    .success-title {
+        font-size: 1.8rem;
+    }
+    
+    .success-icon {
+        font-size: 3rem;
+    }
+    
+    .order-details {
+        padding: 1rem;
+    }
+    
+    .order-details h3 {
+        font-size: 1.1rem;
+    }
+} 

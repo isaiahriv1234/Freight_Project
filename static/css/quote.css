@@ -1,0 +1,226 @@
+/* Quote Page Styles */
+
+.quote-section {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+}
+
+.section-title {
+    color: var(--dark-green);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.delivery-estimate {
+    margin-bottom: 2rem;
+}
+
+.estimate-card {
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.estimate-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.estimate-header h3 {
+    color: var(--dark-green);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.estimate-header i {
+    color: #666;
+    cursor: pointer;
+}
+
+.estimate-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.estimate-details .date {
+    font-weight: 600;
+    color: var(--dark-green);
+}
+
+.estimate-details .time {
+    color: #666;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    border-color: var(--dark-green);
+    color: var(--dark-green);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+    background-color: var(--dark-green);
+    border-color: var(--dark-green);
+    color: var(--white);
+}
+
+.action-btn i:last-child {
+    margin-left: auto;
+}
+
+.continue-section {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e9ecef;
+}
+
+.btn-primary {
+    background-color: var(--dark-green);
+    border-color: var(--dark-green);
+    border-radius: 25px;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0f3a1f;
+    border-color: #0f3a1f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Shipping Options */
+.shipping-options {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.option-card {
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.option-card:hover {
+    background-color: #e9ecef;
+    transform: translateY(-2px);
+}
+
+.option-card.selected {
+    background-color: var(--gold);
+    border-color: var(--dark-green);
+    color: var(--dark-green);
+}
+
+.option-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+
+.option-header .carrier {
+    font-size: 1.1rem;
+}
+
+.option-header .delivery-time {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.option-header .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .quote-section,
+    .shipping-options {
+        padding: 1.5rem;
+        margin: 1rem 0;
+    }
+    
+    .section-title {
+        font-size: 1.3rem;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .action-btn {
+        justify-content: center;
+    }
+    
+    .option-header {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .option-header .carrier {
+        font-size: 1rem;
+    }
+    
+    .option-header .price {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .estimate-details {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .estimate-header {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .btn-primary {
+        width: 100%;
+        padding: 1rem 2rem;
+    }
+} 

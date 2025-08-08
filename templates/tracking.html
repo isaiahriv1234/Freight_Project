@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipment Tracking - Cal Poly Freight Shipping</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/shipping.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/tracking.css') }}" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="logo">
+                    <h1 class="logo-text">CAL POLY</h1>
+                    <h2 class="logo-subtitle">FREIGHT SHIPPING</h2>
+                </div>
+                <nav class="nav-links">
+                    <a href="/shipping" class="nav-link">Shipping</a>
+                    <a href="/tracking" class="nav-link active">Tracking</a>
+                    <a href="/services" class="nav-link">Services</a>
+                </nav>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search">
+                    </div>
+                    <div class="menu-icon">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Shipment Tracker -->
+            <div class="tracker-container">
+                <div class="tracker-card">
+                    <h2 class="tracker-title">Shipment Tracker</h2>
+                    <div class="tracker-input">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="tracking-number" placeholder="Tracking Number" 
+                               value="2341249084231923469">
+                    </div>
+                    <div class="tracker-info">
+                        <span class="carrier">FedEx.</span>
+                        <span class="delivery-date">AUGUST 12</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Partner Logos -->
+            <div class="partner-logos">
+                <div class="logo-item">
+                    <img src="{{ url_for('static', filename='images/dhl-logo.png') }}" alt="DHL" class="partner-logo">
+                </div>
+                <div class="logo-item">
+                    <img src="{{ url_for('static', filename='images/fedex-logo.png') }}" alt="FedEx" class="partner-logo">
+                </div>
+                <div class="logo-item">
+                    <img src="{{ url_for('static', filename='images/ups-logo.png') }}" alt="UPS" class="partner-logo">
+                </div>
+                <div class="logo-item">
+                    <img src="{{ url_for('static', filename='images/usps-logo.png') }}" alt="USPS" class="partner-logo">
+                </div>
+            </div>
+
+            <!-- Tracking Results (Hidden by default) -->
+            <div class="tracking-results" id="tracking-results" style="display: none;">
+                <div class="tracking-card">
+                    <div class="tracking-header">
+                        <h3>Tracking Details</h3>
+                        <span class="tracking-status" id="tracking-status">In Transit</span>
+                    </div>
+                    <div class="tracking-timeline" id="tracking-timeline">
+                        <!-- Timeline will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chatbot -->
+            <div class="chatbot">
+                <div class="chatbot-icon" onclick="toggleChat()">
+                    <div class="mascot">
+                        <i class="fas fa-horse"></i>
+                    </div>
+                    <div class="speech-bubble">
+                        Hello!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/shipping">Shipping</a></li>
+                        <li><a href="/tracking">Tracking</a></li>
+                        <li><a href="/services">Services</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>FAQs</h4>
+                </div>
+                <div class="col-md-4">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about">About Cal Poly Freight Shipping</a></li>
+                        <li><a href="/supplier-diversity">Supplier Diversity</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/shipping.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/tracking.js') }}"></script>
+</body>
+</html> 

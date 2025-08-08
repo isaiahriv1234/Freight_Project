@@ -1,0 +1,234 @@
+/* Tracking Page Styles */
+
+.tracker-container {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+}
+
+.tracker-card {
+    background-color: var(--dark-green);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    color: var(--white);
+}
+
+.tracker-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: var(--gold);
+}
+
+.tracker-input {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.tracker-input i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    z-index: 2;
+}
+
+.tracker-input input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    background-color: var(--white);
+    color: var(--text-dark);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.tracker-input input:focus {
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tracker-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.carrier {
+    font-weight: 600;
+}
+
+.delivery-date {
+    font-weight: 600;
+}
+
+/* Tracking Results */
+.tracking-results {
+    margin: 2rem 0;
+}
+
+.tracking-card {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.tracking-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.tracking-header h3 {
+    color: var(--dark-green);
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.tracking-status {
+    background-color: var(--dark-green);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.tracking-timeline {
+    position: relative;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.timeline-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 1.5rem;
+    top: 3rem;
+    bottom: -1.5rem;
+    width: 2px;
+    background-color: #e9ecef;
+}
+
+.timeline-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--dark-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.timeline-icon.completed {
+    background-color: var(--gold);
+}
+
+.timeline-icon.current {
+    background-color: var(--dark-green);
+    border: 3px solid var(--gold);
+}
+
+.timeline-content {
+    flex: 1;
+}
+
+.timeline-title {
+    font-weight: 600;
+    color: var(--dark-green);
+    margin-bottom: 0.25rem;
+}
+
+.timeline-location {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.timeline-time {
+    color: #999;
+    font-size: 0.8rem;
+}
+
+/* Partner Logos for Tracking */
+.partner-logos {
+    margin: 3rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tracker-card {
+        padding: 1.5rem;
+        margin: 2rem 1rem;
+    }
+    
+    .tracker-title {
+        font-size: 1.3rem;
+    }
+    
+    .tracker-input input {
+        font-size: 0.9rem;
+        padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+    }
+    
+    .tracking-card {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    
+    .tracking-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .timeline-item {
+        margin-bottom: 1rem;
+    }
+    
+    .timeline-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .tracker-info {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .tracking-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .tracking-status {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+} 

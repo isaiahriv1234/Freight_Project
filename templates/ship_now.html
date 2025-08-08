@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ship Now - Cal Poly Freight Shipping</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/shipping.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/ship-form.css') }}" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="logo">
+                    <h1 class="logo-text">CAL POLY</h1>
+                    <h2 class="logo-subtitle">FREIGHT SHIPPING</h2>
+                </div>
+                <nav class="nav-links">
+                    <a href="/shipping" class="nav-link active">Shipping</a>
+                    <a href="/tracking" class="nav-link">Tracking</a>
+                    <a href="/services" class="nav-link">Services</a>
+                </nav>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search">
+                    </div>
+                    <div class="menu-icon">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumb-container">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/"><i class="fas fa-arrow-left"></i> Home</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Ship Now</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="shipping-form">
+                        <h2 class="form-title">Create Your Shipment</h2>
+                        
+                        <!-- Drop Off Section -->
+                        <div class="form-section">
+                            <h3>Drop off</h3>
+                            <div class="form-group">
+                                <select class="form-control" id="dropoff-location">
+                                    <option value="">Select Drop-off Location</option>
+                                    <option value="cal-poly-campus">Cal Poly Campus</option>
+                                    <option value="san-luis-obispo">San Luis Obispo</option>
+                                    <option value="pismo-beach">Pismo Beach</option>
+                                    <option value="arroyo-grande">Arroyo Grande</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" id="dropoff-specific">
+                                    <option value="">Select Location (nearest to farthest)</option>
+                                    <option value="building-1">Building 1 - Engineering</option>
+                                    <option value="building-2">Building 2 - Science</option>
+                                    <option value="building-3">Building 3 - Business</option>
+                                    <option value="building-4">Building 4 - Agriculture</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Pick Up Section -->
+                        <div class="form-section">
+                            <h3>Pick up</h3>
+                            <div class="form-group">
+                                <select class="form-control" id="pickup-location">
+                                    <option value="">Select Pick-up Location</option>
+                                    <option value="cal-poly-campus">Cal Poly Campus</option>
+                                    <option value="san-luis-obispo">San Luis Obispo</option>
+                                    <option value="pismo-beach">Pismo Beach</option>
+                                    <option value="arroyo-grande">Arroyo Grande</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" id="pickup-specific">
+                                    <option value="">Select Location (nearest to farthest)</option>
+                                    <option value="building-1">Building 1 - Engineering</option>
+                                    <option value="building-2">Building 2 - Science</option>
+                                    <option value="building-3">Building 3 - Business</option>
+                                    <option value="building-4">Building 4 - Agriculture</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Item Details Section -->
+                        <div class="form-section">
+                            <h3>Item Details</h3>
+                            <div class="item-details">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="detail-field">
+                                            <label>Item</label>
+                                            <input type="text" class="form-control" placeholder="Item name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="detail-field">
+                                            <label>Package Type</label>
+                                            <select class="form-control">
+                                                <option value="">Select</option>
+                                                <option value="box">Box</option>
+                                                <option value="envelope">Envelope</option>
+                                                <option value="tube">Tube</option>
+                                                <option value="pallet">Pallet</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="detail-field">
+                                            <label>Length</label>
+                                            <input type="number" class="form-control" placeholder="inches">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="detail-field">
+                                            <label>Height</label>
+                                            <input type="number" class="form-control" placeholder="inches">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="detail-field">
+                                            <label>Weight</label>
+                                            <input type="number" class="form-control" placeholder="lbs">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="add-item">
+                                    <button class="btn btn-outline-primary" onclick="addItem()">
+                                        <i class="fas fa-plus"></i> Add Another Item
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Packaging Insurance Section -->
+                        <div class="form-section">
+                            <h3>Packaging Insurance</h3>
+                            <div class="form-group">
+                                <select class="form-control" id="insurance">
+                                    <option value="">Select Insurance Coverage</option>
+                                    <option value="basic">Basic Coverage ($100)</option>
+                                    <option value="standard">Standard Coverage ($500)</option>
+                                    <option value="premium">Premium Coverage ($1000)</option>
+                                    <option value="custom">Custom Amount</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Continue Button -->
+                        <div class="form-actions">
+                            <button class="btn btn-primary btn-lg" onclick="continueToQuote()">
+                                Continue <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chatbot -->
+            <div class="chatbot">
+                <div class="chatbot-icon" onclick="toggleChat()">
+                    <div class="mascot">
+                        <i class="fas fa-horse"></i>
+                    </div>
+                    <div class="speech-bubble">
+                        Hello!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/shipping">Shipping</a></li>
+                        <li><a href="/tracking">Tracking</a></li>
+                        <li><a href="/services">Services</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>FAQs</h4>
+                </div>
+                <div class="col-md-4">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about">About Cal Poly Freight Shipping</a></li>
+                        <li><a href="/supplier-diversity">Supplier Diversity</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/shipping.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/ship-form.js') }}"></script>
+</body>
+</html> 
